@@ -3,4 +3,4 @@ Allow: /
 Disallow: /og-template.html
 Disallow: /_tools/
 
-Sitemap: https://www.eifelohr.de/sitemap.xml
+Sitemap: https://www.hoffnungsohr.de/sitemap.xml
