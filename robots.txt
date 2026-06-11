@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /og-template.html
+Disallow: /_tools/
+
+Sitemap: https://www.eifelohr.de/sitemap.xml

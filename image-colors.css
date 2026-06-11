@@ -1,0 +1,32 @@
+/* Auto-generiert: passender Card-Hintergrund pro Bild aus Eckpixel-Mittelwert */
+/* Quelle: _tools/gen_image_colors.py — nicht manuell editieren */
+.service-card img[src$="images/gs-caliber.jpg"],.product-media img[src$="images/gs-caliber.jpg"]{background:rgb(255,255,255)}
+.service-card img[src$="images/gs-comfort.jpg"],.product-media img[src$="images/gs-comfort.jpg"]{background:rgb(0,0,0)}
+.service-card img[src$="images/gs-fidelity.jpg"],.product-media img[src$="images/gs-fidelity.jpg"]{background:rgb(0,0,0)}
+.service-card img[src$="images/gs-free.jpg"],.product-media img[src$="images/gs-free.jpg"]{background:rgb(255,255,255)}
+.service-card img[src$="images/gs-mass.jpg"],.product-media img[src$="images/gs-mass.jpg"]{background:rgb(0,0,0)}
+.service-card img[src$="images/gs-protect.jpg"],.product-media img[src$="images/gs-protect.jpg"]{background:rgb(0,0,0)}
+.service-card img[src$="images/gs-standard.jpg"],.product-media img[src$="images/gs-standard.jpg"]{background:rgb(192,209,210)}
+.service-card img[src$="images/gs-water.jpg"],.product-media img[src$="images/gs-water.jpg"]{background:rgb(0,0,0)}
+.service-card img[src$="images/gs-xtra.jpg"],.product-media img[src$="images/gs-xtra.jpg"]{background:rgb(255,255,255)}
+.service-card img[src$="images/hearing-aid.jpg"],.product-media img[src$="images/hearing-aid.jpg"]{background:rgb(92,91,71)}
+.service-card img[src$="images/hg-benefit-1.jpg"],.product-media img[src$="images/hg-benefit-1.jpg"]{background:rgb(52,39,27)}
+.service-card img[src$="images/hg-benefit-2.jpg"],.product-media img[src$="images/hg-benefit-2.jpg"]{background:rgb(107,104,80)}
+.service-card img[src$="images/hg-benefit-3.jpg"],.product-media img[src$="images/hg-benefit-3.jpg"]{background:rgb(85,103,112)}
+.service-card img[src$="images/iem-hero.jpg"],.product-media img[src$="images/iem-hero.jpg"]{background:rgb(59,22,23)}
+.service-card img[src$="images/iem-hl4.png"],.product-media img[src$="images/iem-hl4.png"]{background:rgb(0,0,0)}
+.service-card img[src$="images/iem-hl5-gaming.png"],.product-media img[src$="images/iem-hl5-gaming.png"]{background:rgb(0,0,0)}
+.service-card img[src$="images/iem-hl5.png"],.product-media img[src$="images/iem-hl5.png"]{background:rgb(255,255,255)}
+.service-card img[src$="images/iem-hl6.png"],.product-media img[src$="images/iem-hl6.png"]{background:rgb(255,255,255)}
+.service-card img[src$="images/iem-standard.jpg"],.product-media img[src$="images/iem-standard.jpg"]{background:rgb(75,56,40)}
+.service-card img[src$="images/mayen-1.jpg"],.product-media img[src$="images/mayen-1.jpg"]{background:rgb(96,139,156)}
+.service-card img[src$="images/mayen-11.jpg"],.product-media img[src$="images/mayen-11.jpg"]{background:rgb(105,104,91)}
+.service-card img[src$="images/mayen-12.jpg"],.product-media img[src$="images/mayen-12.jpg"]{background:rgb(16,34,9)}
+.service-card img[src$="images/mayen-2.jpg"],.product-media img[src$="images/mayen-2.jpg"]{background:rgb(148,161,164)}
+.service-card img[src$="images/mayen-5.jpg"],.product-media img[src$="images/mayen-5.jpg"]{background:rgb(143,131,131)}
+.service-card img[src$="images/mayen-9.jpg"],.product-media img[src$="images/mayen-9.jpg"]{background:rgb(58,65,43)}
+.service-card img[src$="images/service-gehoerschutz.jpg"],.product-media img[src$="images/service-gehoerschutz.jpg"]{background:rgb(0,0,0)}
+.service-card img[src$="images/service-hoergeraete.jpg"],.product-media img[src$="images/service-hoergeraete.jpg"]{background:rgb(112,100,98)}
+.service-card img[src$="images/service-inear.png"],.product-media img[src$="images/service-inear.png"]{background:rgb(0,0,0)}
+.service-card img[src$="images/team-daniel.jpg"],.product-media img[src$="images/team-daniel.jpg"]{background:rgb(59,47,42)}
+.service-card img[src$="images/team-ersin.jpg"],.product-media img[src$="images/team-ersin.jpg"]{background:rgb(65,25,18)}
