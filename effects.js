@@ -38,4 +38,36 @@
       if (!ticking) { window.requestAnimationFrame(heroRaf); ticking = true; }
     }, { passive: true });
   }
+  // Dropdown navigation
+  document.querySelectorAll('.nav-group-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var group = this.closest('.nav-group');
+      var opening = !group.classList.contains('is-open');
+      document.querySelectorAll('.nav-group.is-open').forEach(function(g){
+        g.classList.remove('is-open');
+        g.querySelector('.nav-group-btn').setAttribute('aria-expanded','false');
+      });
+      if(opening){
+        group.classList.add('is-open');
+        this.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.nav-group.is-open').forEach(function(g){
+      g.classList.remove('is-open');
+      g.querySelector('.nav-group-btn').setAttribute('aria-expanded','false');
+    });
+  });
+
+  // Auto-mark current page link
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav > a, .nav-group-menu a').forEach(function(a){
+    if(a.getAttribute('href') === page){
+      a.setAttribute('aria-current','page');
+      var grp = a.closest('.nav-group');
+      if(grp) grp.querySelector('.nav-group-btn').classList.add('active');
+    }
+  });
 })();
