@@ -18,8 +18,15 @@
   // Header shadow on scroll
   var header = document.querySelector('.site-header');
   if (header) {
+    var headerTicking = false;
     var onScroll = function () {
-      header.classList.toggle('is-scrolled', window.scrollY > 4);
+      if (!headerTicking) {
+        window.requestAnimationFrame(function () {
+          header.classList.toggle('is-scrolled', window.scrollY > 4);
+          headerTicking = false;
+        });
+        headerTicking = true;
+      }
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });

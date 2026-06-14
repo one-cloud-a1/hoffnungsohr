@@ -24,9 +24,10 @@
 <meta name="twitter:image" content="https://www.hoffnungsohr.de/images/og-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"></noscript>
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="image-colors.css">
+<link rel="stylesheet" href="image-colors.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="image-colors.css"></noscript>
 <style>
   .faq-group{margin-bottom:3rem}
   .faq-group h2{margin-bottom:1.5rem}
@@ -63,7 +64,7 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="index.html" class="logo-link"><img src="images/logo.png" alt="Hoffnungsohr" class="logo"></a>
+    <a href="index.html" class="logo-link"><img src="images/logo.png" alt="Hoffnungsohr" class="logo" fetchpriority="high"></a>
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="hoergeraete.html">Hörgeräte</a>
       <a href="gehoerschutz.html">Gehörschutz</a>
