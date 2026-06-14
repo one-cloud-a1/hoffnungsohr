@@ -698,3 +698,103 @@ button:focus-visible,a:focus-visible{
 .pricing-ul li{font-size:.82rem;color:var(--navy);padding-left:18px;position:relative;line-height:1.4}
 .pricing-ul li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
 .pricing-footnote{font-size:.7rem;color:var(--steel);margin-top:12px;padding-top:10px;border-top:1px solid var(--border)}
+
+/* Team page ------------------------------------------- */
+.team-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:calc(100vh - 72px);
+}
+.team-split-media{
+  position:relative;overflow:hidden;
+  min-height:500px;
+}
+.team-split-media img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;
+}
+.team-split-body{
+  background:var(--navy);color:#fff;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:72px 64px;
+}
+.team-eyebrow{
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:20px;
+}
+.team-name{
+  font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:700;
+  color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:10px;
+}
+.team-title{
+  font-size:1.05rem;color:rgba(255,255,255,.6);
+  margin-bottom:40px;font-weight:400;
+}
+.team-divider{
+  width:48px;height:2px;background:var(--gold);
+  margin-bottom:36px;border:0;
+}
+.team-intro{
+  font-size:1.08rem;line-height:1.8;
+  color:rgba(255,255,255,.82);max-width:480px;
+}
+.team-bio-section{
+  padding:100px 0;
+}
+.team-bio-inner{
+  max-width:720px;margin:0 auto;padding:0 40px;
+}
+.team-bio-inner p{
+  font-size:1.1rem;line-height:1.9;color:var(--ink);margin-bottom:1.4em;
+}
+.team-values{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:40px;
+  margin-top:64px;
+}
+.team-value-icon{
+  font-size:1.5rem;margin-bottom:12px;
+}
+.team-value h4{
+  font-size:.95rem;color:var(--navy);margin-bottom:6px;font-weight:600;
+}
+.team-value p{
+  font-size:.9rem;color:var(--muted);line-height:1.6;margin:0;
+}
+.team-pull-quote{
+  background:var(--bg-soft);
+  padding:100px 40px;text-align:center;
+}
+.team-pull-quote blockquote{
+  margin:0;
+  font-size:clamp(1.35rem,2.8vw,1.9rem);
+  font-style:italic;
+  line-height:1.55;
+  color:var(--navy);
+  max-width:800px;
+  margin:0 auto;
+  font-weight:500;
+}
+.team-pull-quote cite{
+  display:block;
+  margin-top:28px;
+  font-size:.85rem;
+  font-style:normal;
+  color:var(--steel);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.team-pull-quote cite::before{
+  content:"— ";
+}
+@media(max-width:900px){
+  .team-split{grid-template-columns:1fr}
+  .team-split-media{min-height:60vw}
+  .team-split-body{padding:52px 32px}
+  .team-values{grid-template-columns:1fr}
+  .team-bio-inner{padding:0 24px}
+}
+@media(max-width:600px){
+  .team-bio-section{padding:64px 0}
+  .team-pull-quote{padding:64px 24px}
+}
