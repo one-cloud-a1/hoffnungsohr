@@ -31,32 +31,78 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"HearingAidStore",
-  "name":"Hoffnungsohr",
-  "legalName":"Reinnarth Hörgeräte GmbH",
-  "description":"Hörakustik-Meisterbetrieb in Rösrath, nähe Köln: Hörgeräte und Hörsysteme ab 0 €, individueller Gehörschutz und Custom In-Ear Monitoring für den Rheinisch-Bergischen Kreis.",
-  "url":"https://www.hoffnungsohr.de/",
-  "logo":"https://www.hoffnungsohr.de/images/logo.png",
-  "image":"https://www.hoffnungsohr.de/images/og-cover.jpg",
-  "telephone":"+49-2651-2822",
-  "email":"hi@hoffnungsohr.de",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"Hauptstr. 251",
-    "postalCode":"51503",
-    "addressLocality":"Rösrath",
-    "addressRegion":"Nordrhein-Westfalen",
-    "addressCountry":"DE"
-  },
-  "areaServed":["Hoffnungsthal","Rösrath","Rheinisch-Bergischer Kreis","Köln","Nordrhein-Westfalen"],
-  "keywords":"Hörgerät Rösrath,Hörsystem Rösrath,Hörgeräteakustiker Rösrath,Hörgeräte nähe Köln,Hörakustiker Rheinisch-Bergischer Kreis",
-  "openingHoursSpecification":[
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday"],"opens":"09:00","closes":"13:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday"],"opens":"14:00","closes":"18:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Thursday","Friday"],"opens":"09:00","closes":"13:00"}
-  ],
-  "founder":{"@type":"Person","name":"Johannes Penzel"},
-  "sameAs":[]
+  "@graph":[
+    {
+      "@type":"HearingAidStore",
+      "@id":"https://www.hoffnungsohr.de/#business",
+      "name":"Hoffnungsohr",
+      "legalName":"Reinnarth Hörgeräte GmbH",
+      "description":"Inhabergeführter Hörakustik-Meisterbetrieb in Rösrath (Hoffnungsthal), nähe Köln. Hörgeräte und Hörsysteme ab 0 €, kostenloser Hörtest, 21 Tage Hörerfolgsgarantie, individuelle Anpassung mit Hoffnungsohr-Target Methode. Partner aller gesetzlichen Krankenkassen im Rheinisch-Bergischen Kreis.",
+      "url":"https://www.hoffnungsohr.de/",
+      "logo":"https://www.hoffnungsohr.de/images/logo.png",
+      "image":"https://www.hoffnungsohr.de/images/anfahrt.jpg",
+      "telephone":"+49-2651-2822",
+      "email":"hi@hoffnungsohr.de",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Hauptstr. 251",
+        "postalCode":"51503",
+        "addressLocality":"Rösrath",
+        "addressRegion":"Nordrhein-Westfalen",
+        "addressCountry":"DE"
+      },
+      "geo":{"@type":"GeoCoordinates","latitude":50.9009,"longitude":7.1729},
+      "areaServed":[
+        {"@type":"City","name":"Rösrath"},
+        {"@type":"City","name":"Bergisch Gladbach"},
+        {"@type":"City","name":"Overath"},
+        {"@type":"City","name":"Lohmar"},
+        {"@type":"City","name":"Odenthal"},
+        {"@type":"City","name":"Köln"},
+        {"@type":"AdministrativeArea","name":"Rheinisch-Bergischer Kreis"},
+        {"@type":"AdministrativeArea","name":"Nordrhein-Westfalen"}
+      ],
+      "openingHoursSpecification":[
+        {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday"],"opens":"09:00","closes":"13:00"},
+        {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday"],"opens":"14:00","closes":"18:00"},
+        {"@type":"OpeningHoursSpecification","dayOfWeek":["Thursday","Friday"],"opens":"09:00","closes":"13:00"}
+      ],
+      "employee":{"@id":"https://www.hoffnungsohr.de/#johannes-penzel"},
+      "founder":{"@id":"https://www.hoffnungsohr.de/#johannes-penzel"},
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog",
+        "name":"Hörakustik Leistungen Hoffnungsohr Rösrath",
+        "itemListElement":[
+          {"@type":"Offer","name":"Kostenloser Hörtest in Rösrath","price":"0","priceCurrency":"EUR"},
+          {"@type":"Offer","name":"Hörgeräte Nulltarif (Kassenversorgung)","price":"0","priceCurrency":"EUR"},
+          {"@type":"Offer","name":"Individuelle Hörgeräte-Anpassung mit Hoffnungsohr-Target Methode"},
+          {"@type":"Offer","name":"21 Tage Hörerfolgsgarantie"},
+          {"@type":"Offer","name":"Gehörschutz maßgefertigt"},
+          {"@type":"Offer","name":"In-Ear Monitoring Custom"},
+          {"@type":"Offer","name":"Tinnitus-Beratung und Hörgeräte-Versorgung"}
+        ]
+      },
+      "potentialAction":{"@type":"ReserveAction","name":"Kostenlosen Hörtest vereinbaren","target":"https://www.hoffnungsohr.de/kontakt.html"},
+      "knowsAbout":["Hörgeräte","Hörsysteme","Hörtest","Tinnitus","Gehörschutz","Sprachverstehen","Real-Ear-Messung","Hoffnungsohr-Target Anpassung","Kassenversorgung Hörgeräte"],
+      "sameAs":[]
+    },
+    {
+      "@type":"Person",
+      "@id":"https://www.hoffnungsohr.de/#johannes-penzel",
+      "name":"Johannes Penzel",
+      "jobTitle":"Hörakustiker-Meister, Inhaber",
+      "description":"Johannes Penzel ist Hörakustiker-Meister und Inhaber von Hoffnungsohr in Rösrath (Rheinisch-Bergischer Kreis). Er ist spezialisiert auf die Hoffnungsohr-Target Anpassung — eine Real-Ear-Mess-basierte Methode für natürlicheres Sprachverstehen.",
+      "worksFor":{"@id":"https://www.hoffnungsohr.de/#business"},
+      "image":"https://www.hoffnungsohr.de/images/hero-portrait.jpg",
+      "knowsAbout":["Hörgeräte-Anpassung","Hoffnungsohr-Target","Real-Ear-Messung","Tinnitus","Sprachverstehen","Gehörschutz","In-Ear Monitoring"],
+      "address":{
+        "@type":"PostalAddress",
+        "addressLocality":"Rösrath",
+        "addressRegion":"Nordrhein-Westfalen",
+        "addressCountry":"DE"
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -176,6 +222,47 @@
           <a href="kontakt.html" class="btn btn-primary">Jetzt Termin vereinbaren</a>
           <a href="hoergeraete.html" class="btn btn-outline">Mehr zu Hörgeräten</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTWORT-BLÖCKE: Häufige Suchanfragen -->
+  <section class="section section-soft reveal">
+    <div class="container">
+      <div class="section-title">
+        <h2>Ihre wichtigsten Fragen — direkt beantwortet</h2>
+        <p>Klar, ehrlich, ohne Umwege. Beim Hoffnungsohr gibt es keine versteckten Kosten und keinen Kaufzwang.</p>
+      </div>
+      <div class="answer-grid reveal-stagger">
+
+        <div class="answer-card">
+          <p class="answer-q">Kosten</p>
+          <h3>Was kostet ein Hörgerät?</h3>
+          <p>Hörgeräte gibt es ab <strong>0 €</strong> über Ihre Krankenkasse (Nulltarif-Versorgung) bis zu rund <strong>3.000 € je Gerät</strong> für Premium-Hörsysteme. Mit gesetzlicher Krankenversicherung zahlen Sie lediglich die Zuzahlung von 10 € je Gerät. Aufzahlungsgeräte mit mehr Leistung beginnen ab 350 €.</p>
+          <a href="hoergeraete.html">Zur Preisübersicht →</a>
+        </div>
+
+        <div class="answer-card">
+          <p class="answer-q">Krankenkasse</p>
+          <h3>Welche Hörgeräte zahlt die Krankenkasse?</h3>
+          <p>Alle gesetzlich Versicherten mit ärztlich bestätigtem Hörverlust haben <strong>Anspruch auf ein volldigitales Markenhörgerät ohne Aufzahlung</strong>. Die Kasse übernimmt bis zu <strong>741 € je Gerät</strong> (Stand 2025). Hoffnungsohr rechnet direkt mit Ihrer Kasse ab — Sie kümmern sich um nichts.</p>
+          <a href="kostenuebernahme.html">Mehr zur Kostenübernahme →</a>
+        </div>
+
+        <div class="answer-card">
+          <p class="answer-q">Zeitaufwand</p>
+          <h3>Wie lange dauert eine Hörgeräte-Anpassung?</h3>
+          <p>Vom ersten Hörtest bis zur finalen Anpassung vergehen in der Regel <strong>3 bis 4 Wochen</strong> — inklusive unserer <strong>21 Tage Alltagserprobung</strong>. Der erste Termin dauert rund 60 Minuten. Danach folgen 1–2 Feinanpassungen, bis das Hörgerät perfekt sitzt und klingt.</p>
+          <a href="kontakt.html">Termin vereinbaren →</a>
+        </div>
+
+        <div class="answer-card">
+          <p class="answer-q">Erster Besuch</p>
+          <h3>Was passiert beim ersten Termin?</h3>
+          <p>Beim ersten Besuch führt <strong>Johannes Penzel</strong> persönlich einen <strong>kostenlosen Hörtest</strong> durch (ca. 15 Min.), analysiert Ihre typischen Hörsituationen und berät Sie zu passenden Hörsystemen — von Nulltarif bis High-End. Kein Kaufzwang, keine Voranmeldung nötig. Einfach vorbeikommen.</p>
+          <a href="kontakt.html">Jetzt Hörtest vereinbaren →</a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -350,6 +437,40 @@
           <div class="diff-body">
             <h3>Rösrath — 20 Minuten von Köln</h3>
             <p>Kurze Wege statt langer Anfahrt: Hoffnungsthal liegt direkt an der Kölner Stadtgrenze. Persönliche Beratung und Nachsorge ohne großen Aufwand.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOKALE AUTORITÄT -->
+  <section class="authority-section reveal">
+    <div class="container authority-inner">
+      <div class="authority-media">
+        <img src="images/anfahrt.jpg" alt="Hoffnungsohr Fachgeschäft in Rösrath-Hoffnungsthal, Hauptstr. 251" loading="lazy">
+      </div>
+      <div class="authority-body">
+        <p class="team-eyebrow">Ihr Hörakustiker in Rösrath</p>
+        <h2>Fest verwurzelt im Rheinisch-Bergischen Kreis</h2>
+        <p><strong>Hoffnungsohr</strong> ist der inhabergeführte Meisterbetrieb für Hörakustik in Rösrath-Hoffnungsthal — direkt an der Grenze zu Köln, mitten im <strong>Rheinisch-Bergischen Kreis</strong>. Inhaber <strong>Johannes Penzel</strong> kennt die Region, ihre Menschen und ihre Alltagssituationen: ob im ruhigen Gespräch zuhause in Overath, in der lauten Gaststätte in Bergisch Gladbach oder beim Vereinstreffen in Lohmar.</p>
+        <p>Was uns von einem anonymen Kettenakustiker in der Kölner Innenstadt unterscheidet: Sie haben hier immer denselben Ansprechpartner. <strong>Johannes Penzel</strong> führt persönlich Ihren Hörtest durch, passt Ihr Hörgerät an und betreut Sie langfristig. Kein wechselndes Filialpersonal, kein Konzern im Hintergrund.</p>
+        <p>Rösrath-Hoffnungsthal liegt für Kunden aus dem gesamten Rheinisch-Bergischen Kreis günstig — und für viele Kölner im Südosten sogar näher als die Innenstadt.</p>
+        <div class="authority-facts">
+          <div class="authority-fact">
+            <strong>Meisterbetrieb</strong>
+            <span>Hörakustik-Meister</span>
+          </div>
+          <div class="authority-fact">
+            <strong>Rösrath</strong>
+            <span>Rheinisch-Bergischer Kreis</span>
+          </div>
+          <div class="authority-fact">
+            <strong>~20 Min.</strong>
+            <span>von Köln-Zentrum</span>
+          </div>
+          <div class="authority-fact">
+            <strong>Inhabergeführt</strong>
+            <span>Johannes Penzel persönlich</span>
           </div>
         </div>
       </div>
