@@ -761,6 +761,35 @@ button:focus-visible,a:focus-visible{
 }
 .local-town::before{content:"📍";font-size:.75rem}
 
+/* Opening hours DL ------------------------------------ */
+.hours-dl{
+  display:grid;grid-template-columns:auto 1fr;
+  gap:0 16px;margin:0;
+}
+.hours-dl dt{
+  font-size:.83rem;font-weight:600;
+  padding:5px 0;border-top:1px solid rgba(255,255,255,.1);
+  white-space:nowrap;color:rgba(255,255,255,.65);
+}
+.hours-dl dt:first-child{border-top:0;padding-top:0}
+.hours-dl dd{
+  font-size:.83rem;margin:0;
+  padding:5px 0;border-top:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.9);line-height:1.55;
+}
+.hours-dl dd:first-of-type{border-top:0;padding-top:0}
+/* Light variant (on white/soft background) */
+.hours-dl-light dt{color:var(--steel);border-top-color:var(--border)}
+.hours-dl-light dd{color:var(--navy);border-top-color:var(--border)}
+/* Claim section variant (on dark navy) */
+.hours-dl-claim{
+  margin:.5em 0 1.5em;
+  color:rgba(255,255,255,.75);
+}
+.hours-dl-claim dt,.hours-dl-claim dd{font-size:.9rem;border-top-color:rgba(255,255,255,.12)}
+.hours-dl-claim dt{color:rgba(255,255,255,.55)}
+.hours-dl-claim dd{color:rgba(255,255,255,.82)}
+
 /* Answer blocks --------------------------------------- */
 .answer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px}
 .answer-card{
