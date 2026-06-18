@@ -191,7 +191,7 @@ button:focus-visible,a:focus-visible{
 .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .hero::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(15,31,46,.2) 0%,rgba(15,31,46,.7) 100%);
+  background:linear-gradient(180deg,rgba(15,31,46,.45) 0%,rgba(15,31,46,.55) 45%,rgba(15,31,46,.82) 100%);
   z-index:-1;
 }
 .hero-overlay{
@@ -207,14 +207,17 @@ button:focus-visible,a:focus-visible{
   font-size:clamp(2rem,5vw,3.75rem);
   margin-bottom:.3em;
   letter-spacing:-.03em;color:#fff;font-weight:700;
+  text-shadow:0 2px 12px rgba(0,0,0,.4);
 }
 .hero-sub{
   font-size:clamp(1rem,1.5vw,1.2rem);
-  opacity:.85;margin-bottom:2em;font-weight:400;letter-spacing:.01em;
+  opacity:.95;margin-bottom:2em;font-weight:500;letter-spacing:.01em;
+  text-shadow:0 1px 8px rgba(0,0,0,.45);
 }
 .hero-eyebrow{
-  font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;
-  color:var(--gold);font-weight:600;margin-bottom:16px;opacity:1;
+  font-size:.74rem;text-transform:uppercase;letter-spacing:.2em;
+  color:#E6CD96;font-weight:700;margin-bottom:16px;opacity:1;
+  text-shadow:0 1px 6px rgba(0,0,0,.6);
 }
 .hero h1 em{
   display:block;font-style:normal;font-size:.58em;
