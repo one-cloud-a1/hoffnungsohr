@@ -792,6 +792,7 @@ button:focus-visible,a:focus-visible{
 .hours-dl-claim dt,.hours-dl-claim dd{font-size:.9rem;border-top-color:rgba(255,255,255,.12)}
 .hours-dl-claim dt{color:rgba(255,255,255,.55)}
 .hours-dl-claim dd{color:rgba(255,255,255,.82)}
+.hours-note{margin:8px 0 0;font-size:.82rem;font-style:italic;color:inherit;opacity:.72}
 
 /* Answer blocks --------------------------------------- */
 .answer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px}
