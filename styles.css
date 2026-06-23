@@ -704,6 +704,7 @@ button:focus-visible,a:focus-visible{
 .pricing-name{font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:var(--steel);font-weight:600;margin-bottom:8px}
 .pricing-price{font-size:1.75rem;font-weight:700;color:var(--navy);letter-spacing:-.03em;line-height:1;margin-bottom:2px}
 .pricing-price .pu{font-size:.85rem;font-weight:500;color:var(--steel);letter-spacing:0}
+.pricing-price-soon{font-size:1rem;font-weight:600;color:var(--steel);letter-spacing:0}
 .pricing-privatpreis{font-size:.75rem;color:var(--steel);margin-bottom:14px;line-height:1.4}
 .pricing-desc{font-size:.82rem;color:var(--muted);margin-bottom:16px;line-height:1.5}
 .pricing-ul{list-style:none;display:grid;gap:6px;margin-bottom:20px;flex:1}
