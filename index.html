@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"></noscript>
-<link rel="preload" as="image" href="images/hero-portrait.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-portrait.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="image-colors.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="image-colors.css"></noscript>
 <script type="application/ld+json">
@@ -150,7 +150,10 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img src="images/hero-portrait.jpg" alt="Johannes Penzel, Hörakustiker-Meister beim Hoffnungsohr in Rösrath" class="hero-image" fetchpriority="high">
+    <picture>
+      <source srcset="images/hero-portrait.webp" type="image/webp">
+      <img src="images/hero-portrait.jpg" alt="Johannes Penzel, Hörakustiker-Meister beim Hoffnungsohr in Rösrath" class="hero-image" fetchpriority="high">
+    </picture>
     <div class="hero-overlay">
       <p class="hero-eyebrow">Meisterbetrieb für Hörakustik · Rösrath, nähe Köln</p>
       <h1>Hörgeräte in Rösrath<br><em>mit 21 Tagen Hörerfolgsgarantie</em></h1>
