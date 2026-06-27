@@ -705,6 +705,11 @@ button:focus-visible,a:focus-visible{
 .pricing-price{font-size:1.75rem;font-weight:700;color:var(--navy);letter-spacing:-.03em;line-height:1;margin-bottom:2px}
 .pricing-price .pu{font-size:.85rem;font-weight:500;color:var(--steel);letter-spacing:0}
 .pricing-price-soon{font-size:1rem;font-weight:600;color:var(--steel);letter-spacing:0}
+/* Lazy-Form-Embed Platzhalter */
+.form-embed{background:var(--bg-soft)}
+.form-embed-loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--steel);font-size:.95rem}
+.form-embed-spinner{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:fe-spin .8s linear infinite}
+@keyframes fe-spin{to{transform:rotate(360deg)}}
 .pricing-privatpreis{font-size:.75rem;color:var(--steel);margin-bottom:14px;line-height:1.4}
 .pricing-desc{font-size:.82rem;color:var(--muted);margin-bottom:16px;line-height:1.5}
 .pricing-ul{list-style:none;display:grid;gap:6px;margin-bottom:20px;flex:1}
