@@ -106,7 +106,7 @@ button:focus-visible,a:focus-visible{
 .btn-header{padding:10px 20px;font-size:14px}
 
 .nav-toggle{display:none;width:44px;height:44px;padding:10px;border-radius:var(--radius-sm)}
-.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--navy);border-radius:2px;margin:5px auto;transition:transform .2s ease,opacity .2s ease}
+.nav-toggle span{display:block;flex-shrink:0;width:22px;height:2px;background:var(--navy);border-radius:2px;margin:5px auto;transition:transform .2s ease,opacity .2s ease}
 
 /* Dropdown groups */
 .nav-group{position:relative}
