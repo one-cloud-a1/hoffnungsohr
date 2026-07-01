@@ -734,6 +734,7 @@ button:focus-visible,a:focus-visible{
 .ho-form-status.is-err{color:#b3401f}
 /* Funnel-Mechanik */
 .ho-funnel{text-align:left}
+.ho-funnel [hidden]{display:none!important}
 .funnel-progress{height:5px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:12px}
 .funnel-progress-bar{display:block;height:100%;width:20%;background:var(--gold);border-radius:3px;transition:width .35s cubic-bezier(.22,.61,.36,1)}
 .funnel-count{font-size:.78rem;color:var(--steel);margin:0 0 22px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
