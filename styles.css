@@ -710,34 +710,54 @@ button:focus-visible,a:focus-visible{
 .form-embed-loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--steel);font-size:.95rem}
 .form-embed-spinner{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:fe-spin .8s linear infinite}
 @keyframes fe-spin{to{transform:rotate(360deg)}}
-/* Kontaktformular (Terminanfrage) */
-.ho-form{display:flex;flex-direction:column;gap:16px;text-align:left}
-.ho-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+/* Kontaktformular (Terminanfrage) – Funnel */
 .ho-field{display:flex;flex-direction:column;gap:6px}
 .ho-field > span{font-size:.9rem;font-weight:600;color:var(--navy)}
 .ho-field em{color:var(--gold-dark);font-style:normal}
 .ho-field small{font-weight:400;color:var(--steel)}
-.ho-form input,.ho-form select,.ho-form textarea{
+.ho-funnel input[type=text],.ho-funnel input[type=tel],.ho-funnel input[type=email],.ho-funnel select,.ho-funnel textarea{
   font:inherit;color:var(--ink);background:#fff;width:100%;box-sizing:border-box;
   border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;
   transition:border-color .15s ease,box-shadow .15s ease;
 }
-.ho-form input:focus,.ho-form select:focus,.ho-form textarea:focus{
+.ho-funnel input[type=text]:focus,.ho-funnel input[type=tel]:focus,.ho-funnel input[type=email]:focus,.ho-funnel select:focus,.ho-funnel textarea:focus{
   outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(196,164,106,.18);
 }
-.ho-form textarea{resize:vertical;min-height:84px}
+.ho-funnel textarea{resize:vertical;min-height:96px}
 .ho-consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--steel);line-height:1.5}
 .ho-consent input{width:auto;margin-top:3px;flex-shrink:0}
 .ho-consent a{color:var(--navy);font-weight:600}
 .ho-consent em{color:var(--gold-dark);font-style:normal}
 .ho-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
-.ho-form button[type=submit]{align-self:flex-start;margin-top:4px}
-.ho-form-status{margin:2px 0 0;font-size:.95rem;font-weight:600;min-height:1.2em}
+.ho-form-status{margin:14px 0 0;font-size:.95rem;font-weight:600;min-height:1.2em;text-align:center}
 .ho-form-status.is-ok{color:#1a7a4c}
 .ho-form-status.is-err{color:#b3401f}
+/* Funnel-Mechanik */
+.ho-funnel{text-align:left}
+.funnel-progress{height:5px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:12px}
+.funnel-progress-bar{display:block;height:100%;width:20%;background:var(--gold);border-radius:3px;transition:width .35s cubic-bezier(.22,.61,.36,1)}
+.funnel-count{font-size:.78rem;color:var(--steel);margin:0 0 22px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.funnel-step{display:none}
+.funnel-step.is-active{display:block;animation:funnelIn .32s ease}
+@keyframes funnelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.funnel-q{font-size:1.3rem;color:var(--navy);margin:0 0 18px;letter-spacing:-.01em}
+.funnel-options{display:flex;flex-direction:column;gap:10px}
+.funnel-opt{position:relative;display:flex;align-items:center;gap:13px;padding:15px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);cursor:pointer;transition:border-color .15s ease,background .15s ease}
+.funnel-opt:hover{border-color:var(--gold)}
+.funnel-opt input{position:absolute;opacity:0;pointer-events:none}
+.funnel-opt span{font-weight:600;color:var(--navy)}
+.funnel-opt::before{content:"";width:20px;height:20px;border:2px solid var(--border);border-radius:50%;flex-shrink:0;transition:border-color .15s ease,background .15s ease}
+.funnel-opt:has(input:checked),.funnel-opt.is-selected{border-color:var(--gold);background:rgba(196,164,106,.09)}
+.funnel-opt:has(input:checked)::before,.funnel-opt.is-selected::before{border-color:var(--gold);background:radial-gradient(circle,var(--gold) 42%,transparent 46%)}
+.funnel-nav{display:flex;gap:12px;align-items:center;margin-top:24px}
+.funnel-nav .funnel-next,.funnel-nav .funnel-submit{margin-left:auto}
+.funnel-done{text-align:center;padding:24px 0}
+.funnel-done-icon{width:56px;height:56px;line-height:56px;border-radius:50%;background:#1a7a4c;color:#fff;font-size:1.7rem;font-weight:700;margin:0 auto 16px}
+.funnel-done h3{color:var(--navy);margin:0 0 8px}
+.funnel-done p{color:var(--steel);margin:0}
 @media(max-width:520px){
-  .ho-form-grid{grid-template-columns:1fr}
-  .ho-form button[type=submit]{width:100%;text-align:center}
+  .funnel-nav .btn{padding-left:18px;padding-right:18px}
+  .funnel-q{font-size:1.15rem}
 }
 .pricing-privatpreis{font-size:.75rem;color:var(--steel);margin-bottom:14px;line-height:1.4}
 .pricing-desc{font-size:.82rem;color:var(--muted);margin-bottom:16px;line-height:1.5}

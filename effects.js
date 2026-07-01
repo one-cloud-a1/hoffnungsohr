@@ -91,37 +91,94 @@
   }
 })();
 
-// Terminanfrage-Formular -> Google Apps Script (Sheet + E-Mail)
+// Terminanfrage-Funnel (mehrstufig) -> Google Apps Script (Sheet + E-Mail)
 (function () {
-  var forms = document.querySelectorAll('form.ho-form[data-endpoint]');
-  Array.prototype.forEach.call(forms, function (form) {
+  var forms = document.querySelectorAll('form.ho-funnel[data-endpoint]');
+  Array.prototype.forEach.call(forms, function (form) { initFunnel(form); });
+
+  function initFunnel(form) {
+    var steps = Array.prototype.slice.call(form.querySelectorAll('.funnel-step'));
+    var bar = form.querySelector('.funnel-progress-bar');
+    var count = form.querySelector('.funnel-count');
+    var backBtn = form.querySelector('.funnel-back');
+    var nextBtn = form.querySelector('.funnel-next');
+    var submitBtn = form.querySelector('.funnel-submit');
+    var status = form.querySelector('.ho-form-status');
+    var done = form.querySelector('.funnel-done');
+    var i = 0;
+
+    function stepFields(step) {
+      return Array.prototype.slice.call(step.querySelectorAll('input, select, textarea'));
+    }
+    function stepValid(step) {
+      var ok = true;
+      stepFields(step).forEach(function (el) {
+        if (!el.checkValidity()) { if (ok) { el.reportValidity(); } ok = false; }
+      });
+      return ok;
+    }
+    function show(n) {
+      i = n;
+      steps.forEach(function (s, idx) { s.classList.toggle('is-active', idx === n); });
+      bar.style.width = ((n + 1) / steps.length * 100) + '%';
+      count.textContent = 'Schritt ' + (n + 1) + ' von ' + steps.length;
+      backBtn.hidden = (n === 0);
+      var last = (n === steps.length - 1);
+      nextBtn.hidden = last;
+      submitBtn.hidden = !last;
+      var focusEl = steps[n].querySelector('input[type=text], input[type=tel], input[type=email], textarea');
+      if (focusEl) { try { focusEl.focus({ preventScroll: true }); } catch (e) {} }
+    }
+    function goNext() {
+      if (!stepValid(steps[i])) { return; }
+      if (i < steps.length - 1) { show(i + 1); }
+    }
+
+    nextBtn.addEventListener('click', goNext);
+    backBtn.addEventListener('click', function () { if (i > 0) { show(i - 1); } });
+
+    // Auswahl-Optionen: Markierung setzen + automatisch weiter
+    Array.prototype.forEach.call(form.querySelectorAll('.funnel-options'), function (group) {
+      group.addEventListener('change', function () {
+        Array.prototype.forEach.call(group.querySelectorAll('.funnel-opt'), function (opt) {
+          opt.classList.toggle('is-selected', opt.querySelector('input').checked);
+        });
+        if (group.hasAttribute('data-autonext')) { setTimeout(goNext, 240); }
+      });
+    });
+
+    // Enter = Weiter (außer im Textfeld mit mehreren Zeilen / letzter Schritt)
+    form.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA' && i < steps.length - 1) {
+        e.preventDefault();
+        goNext();
+      }
+    });
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      // Honeypot: von Bots ausgefüllt -> still verwerfen
-      if (form._gotcha && form._gotcha.value) { return; }
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      var status = form.querySelector('.ho-form-status');
-      var btn = form.querySelector('button[type=submit]');
-      var orig = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Wird gesendet …';
+      if (form._gotcha && form._gotcha.value) { return; }   // Honeypot
+      if (!stepValid(steps[i])) { return; }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wird gesendet …';
       status.className = 'ho-form-status';
       status.textContent = '';
       fetch(form.getAttribute('data-endpoint'), {
-        method: 'POST',
-        mode: 'no-cors',
-        body: new FormData(form)
+        method: 'POST', mode: 'no-cors', body: new FormData(form)
       }).then(function () {
-        form.reset();
-        status.className = 'ho-form-status is-ok';
-        status.textContent = 'Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns zeitnah bei Ihnen.';
-        btn.style.display = 'none';
+        steps.forEach(function (s) { s.classList.remove('is-active'); });
+        form.querySelector('.funnel-progress').style.display = 'none';
+        count.style.display = 'none';
+        form.querySelector('.funnel-nav').style.display = 'none';
+        done.hidden = false;
       }).catch(function () {
-        btn.disabled = false;
-        btn.textContent = orig;
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Terminanfrage senden';
         status.className = 'ho-form-status is-err';
         status.innerHTML = 'Leider ist etwas schiefgelaufen. Bitte rufen Sie uns direkt an: <a href="tel:+4915678669304">015678&nbsp;669304</a>.';
       });
     });
-  });
+
+    show(0);
+  }
 })();

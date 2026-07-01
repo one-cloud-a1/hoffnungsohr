@@ -259,27 +259,58 @@
       <p class="team-eyebrow" style="color:var(--gold);text-align:center">Termin vereinbaren</p>
       <h2 style="text-align:center;margin-bottom:8px">Einfach Kontaktdaten hinterlassen</h2>
       <p style="text-align:center;color:var(--steel);margin-bottom:32px">Wir melden uns zeitnah bei Ihnen — kein Kaufzwang, kein Zeitdruck.</p>
-      <form class="ho-form" id="terminForm" data-endpoint="https://script.google.com/macros/s/AKfycbx64lWO6tSty-exQc0pwbpHUeRM1vw1JOXdy9d4expWkWomfN7EixlwAwFxCfI0iaiF/exec" novalidate style="max-width:600px;margin:0 auto">
-        <div class="ho-form-grid">
-          <label class="ho-field"><span>Name <em>*</em></span><input type="text" name="Name" required autocomplete="name"></label>
-          <label class="ho-field"><span>Telefon <em>*</em></span><input type="tel" name="Telefon" required autocomplete="tel"></label>
+      <form class="ho-funnel" id="terminForm" data-endpoint="https://script.google.com/macros/s/AKfycbx64lWO6tSty-exQc0pwbpHUeRM1vw1JOXdy9d4expWkWomfN7EixlwAwFxCfI0iaiF/exec" novalidate style="max-width:560px;margin:0 auto">
+        <div class="funnel-progress" aria-hidden="true"><span class="funnel-progress-bar"></span></div>
+        <p class="funnel-count"></p>
+
+        <div class="funnel-step is-active" data-step>
+          <h3 class="funnel-q">Worum geht es?</h3>
+          <div class="funnel-options" data-autonext>
+            <label class="funnel-opt"><input type="radio" name="Anliegen" value="Kostenloser Hörtest" required><span>Kostenloser Hörtest</span></label>
+            <label class="funnel-opt"><input type="radio" name="Anliegen" value="Beratung zu Hörgeräten"><span>Beratung zu Hörgeräten</span></label>
+            <label class="funnel-opt"><input type="radio" name="Anliegen" value="Gehörschutz"><span>Gehörschutz</span></label>
+            <label class="funnel-opt"><input type="radio" name="Anliegen" value="In-Ear Monitoring"><span>In-Ear Monitoring</span></label>
+            <label class="funnel-opt"><input type="radio" name="Anliegen" value="Reparatur &amp; Service"><span>Reparatur &amp; Service</span></label>
+            <label class="funnel-opt"><input type="radio" name="Anliegen" value="Sonstiges"><span>Sonstiges</span></label>
+          </div>
         </div>
-        <label class="ho-field"><span>E-Mail</span><input type="email" name="E-Mail" autocomplete="email"></label>
-        <label class="ho-field"><span>Ihr Anliegen <em>*</em></span>
-          <select name="Anliegen" required>
-            <option value="Kostenloser Hörtest">Kostenloser Hörtest</option>
-            <option value="Beratung zu Hörgeräten">Beratung zu Hörgeräten</option>
-            <option value="Gehörschutz">Gehörschutz</option>
-            <option value="In-Ear Monitoring">In-Ear Monitoring</option>
-            <option value="Reparatur &amp; Service">Reparatur &amp; Service</option>
-            <option value="Sonstiges">Sonstiges</option>
-          </select>
-        </label>
-        <label class="ho-field"><span>Nachricht <small>(optional)</small></span><textarea name="Nachricht" rows="3"></textarea></label>
-        <label class="ho-consent"><input type="checkbox" name="consent" required> <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage einverstanden. <em>*</em></span></label>
+
+        <div class="funnel-step" data-step>
+          <h3 class="funnel-q">Wie heißen Sie?</h3>
+          <label class="ho-field"><span>Name <em>*</em></span><input type="text" name="Name" required autocomplete="name"></label>
+        </div>
+
+        <div class="funnel-step" data-step>
+          <h3 class="funnel-q">Wie erreichen wir Sie am besten?</h3>
+          <label class="ho-field"><span>Telefon <em>*</em></span><input type="tel" name="Telefon" required autocomplete="tel"></label>
+          <label class="ho-field"><span>E-Mail <small>(optional)</small></span><input type="email" name="E-Mail" autocomplete="email"></label>
+        </div>
+
+        <div class="funnel-step" data-step>
+          <h3 class="funnel-q">Möchten Sie uns noch etwas mitteilen?</h3>
+          <label class="ho-field"><span>Nachricht <small>(optional)</small></span><textarea name="Nachricht" rows="4"></textarea></label>
+        </div>
+
+        <div class="funnel-step" data-step>
+          <h3 class="funnel-q">Fast geschafft!</h3>
+          <p style="color:var(--steel);font-size:.95rem;margin:-4px 0 16px">Wir melden uns zeitnah bei Ihnen — kein Kaufzwang, kein Zeitdruck.</p>
+          <label class="ho-consent"><input type="checkbox" name="consent" required> <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden. <em>*</em></span></label>
+        </div>
+
         <input type="text" name="_gotcha" class="ho-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button type="submit" class="btn btn-primary btn-lg">Terminanfrage senden</button>
+
+        <div class="funnel-nav">
+          <button type="button" class="btn btn-outline funnel-back" hidden>← Zurück</button>
+          <button type="button" class="btn btn-primary funnel-next">Weiter →</button>
+          <button type="submit" class="btn btn-primary funnel-submit" hidden>Terminanfrage senden</button>
+        </div>
         <p class="ho-form-status" role="status" aria-live="polite"></p>
+
+        <div class="funnel-done" hidden>
+          <div class="funnel-done-icon" aria-hidden="true">✓</div>
+          <h3>Vielen Dank!</h3>
+          <p>Wir haben Ihre Anfrage erhalten und melden uns zeitnah bei Ihnen.</p>
+        </div>
       </form>
     </div>
   </section>
