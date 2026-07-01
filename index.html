@@ -259,10 +259,28 @@
       <p class="team-eyebrow" style="color:var(--gold);text-align:center">Termin vereinbaren</p>
       <h2 style="text-align:center;margin-bottom:8px">Einfach Kontaktdaten hinterlassen</h2>
       <p style="text-align:center;color:var(--steel);margin-bottom:32px">Wir melden uns zeitnah bei Ihnen — kein Kaufzwang, kein Zeitdruck.</p>
-      <div class="form-embed" data-form-src="https://app.formbricks.com/s/n6f1f8y5nmloslhdnzdq41bt?embed=true" style="position:relative;height:min(470px,80dvh);overflow:auto;border-radius:var(--radius)">
-        <div class="form-embed-loader"><span class="form-embed-spinner" aria-hidden="true"></span>Formular wird geladen …</div>
-        <noscript><iframe src="https://app.formbricks.com/s/n6f1f8y5nmloslhdnzdq41bt?embed=true" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;border:0;" title="Terminanfrage Hoffnungsohr"></iframe></noscript>
-      </div>
+      <form class="ho-form" id="terminForm" data-endpoint="https://script.google.com/macros/s/AKfycbx64lWO6tSty-exQc0pwbpHUeRM1vw1JOXdy9d4expWkWomfN7EixlwAwFxCfI0iaiF/exec" novalidate style="max-width:600px;margin:0 auto">
+        <div class="ho-form-grid">
+          <label class="ho-field"><span>Name <em>*</em></span><input type="text" name="Name" required autocomplete="name"></label>
+          <label class="ho-field"><span>Telefon <em>*</em></span><input type="tel" name="Telefon" required autocomplete="tel"></label>
+        </div>
+        <label class="ho-field"><span>E-Mail</span><input type="email" name="E-Mail" autocomplete="email"></label>
+        <label class="ho-field"><span>Ihr Anliegen <em>*</em></span>
+          <select name="Anliegen" required>
+            <option value="Kostenloser Hörtest">Kostenloser Hörtest</option>
+            <option value="Beratung zu Hörgeräten">Beratung zu Hörgeräten</option>
+            <option value="Gehörschutz">Gehörschutz</option>
+            <option value="In-Ear Monitoring">In-Ear Monitoring</option>
+            <option value="Reparatur &amp; Service">Reparatur &amp; Service</option>
+            <option value="Sonstiges">Sonstiges</option>
+          </select>
+        </label>
+        <label class="ho-field"><span>Nachricht <small>(optional)</small></span><textarea name="Nachricht" rows="3"></textarea></label>
+        <label class="ho-consent"><input type="checkbox" name="consent" required> <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage einverstanden. <em>*</em></span></label>
+        <input type="text" name="_gotcha" class="ho-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn btn-primary btn-lg">Terminanfrage senden</button>
+        <p class="ho-form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
@@ -653,30 +671,6 @@ Hauptstr. 251
     </nav>
   </div>
 </footer>
-
-<!-- Formbricks (deaktiviert bis ENV_ID gesetzt ist) -->
-<script>
-  window.formbricksConfig = {
-    // Tragen Sie hier Ihre Werte ein, um Formbricks zu aktivieren:
-    environmentId: "",          // z.B. "cl..." aus Formbricks Dashboard
-    apiHost: "https://app.formbricks.com"  // self-hosted: eigene URL
-  };
-  (function () {
-    if (!window.formbricksConfig.environmentId) return;
-    var s = document.createElement("script");
-    s.type = "module";
-    s.src = window.formbricksConfig.apiHost + "/js/formbricks.umd.cjs";
-    s.onload = function () {
-      if (window.formbricks) {
-        window.formbricks.init({
-          environmentId: window.formbricksConfig.environmentId,
-          apiHost: window.formbricksConfig.apiHost
-        });
-      }
-    };
-    document.head.appendChild(s);
-  })();
-</script>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();

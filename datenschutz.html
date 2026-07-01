@@ -104,6 +104,10 @@
     <h3>SSL- bzw. TLS-Verschlüsselung</h3>
     <p>Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt.</p>
 
+    <h3>Kontaktformular (Terminanfrage)</h3>
+    <p>Wenn Sie uns über das Terminanfrage-Formular auf dieser Website kontaktieren, werden die von Ihnen eingegebenen Daten (Name, Telefonnummer, E-Mail-Adresse, Anliegen und Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage und für Anschlussfragen an uns übermittelt und bei uns gespeichert. Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO) sowie zur Durchführung vorvertraglicher Maßnahmen (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). Sie können Ihre Einwilligung jederzeit widerrufen.</p>
+    <p>Zur Entgegennahme und Speicherung der Formulardaten nutzen wir Dienste von <strong>Google</strong> (Google Workspace / Google Apps Script &amp; Google&nbsp;Sheets, Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Die eingegebenen Daten werden dabei an Google übermittelt und in einer für uns zugänglichen Tabelle gespeichert; zusätzlich erhalten wir eine Benachrichtigung per E-Mail. Eine Übermittlung in Drittländer (USA) kann nicht ausgeschlossen werden; Google ist unter dem EU-US Data Privacy Framework zertifiziert. Ihre Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern oder der Zweck für die Speicherung entfällt.</p>
+
     <h3>Widerspruch gegen Werbe-E-Mails</h3>
     <p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen.</p>
 
@@ -140,30 +144,6 @@ Hauptstr. 251
     <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
   </div>
 </footer>
-
-<!-- Formbricks (deaktiviert bis ENV_ID gesetzt ist) -->
-<script>
-  window.formbricksConfig = {
-    // Tragen Sie hier Ihre Werte ein, um Formbricks zu aktivieren:
-    environmentId: "",          // z.B. "cl..." aus Formbricks Dashboard
-    apiHost: "https://app.formbricks.com"  // self-hosted: eigene URL
-  };
-  (function () {
-    if (!window.formbricksConfig.environmentId) return;
-    var s = document.createElement("script");
-    s.type = "module";
-    s.src = window.formbricksConfig.apiHost + "/js/formbricks.umd.cjs";
-    s.onload = function () {
-      if (window.formbricks) {
-        window.formbricks.init({
-          environmentId: window.formbricksConfig.environmentId,
-          apiHost: window.formbricksConfig.apiHost
-        });
-      }
-    };
-    document.head.appendChild(s);
-  })();
-</script>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();

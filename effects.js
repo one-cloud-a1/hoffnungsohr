@@ -91,29 +91,37 @@
   }
 })();
 
-// Lazy-load eingebettete Formulare (Formbricks) erst bei Annäherung —
-// hält die Drittanbieter-JS/CSS aus dem kritischen Ladepfad (PageSpeed)
+// Terminanfrage-Formular -> Google Apps Script (Sheet + E-Mail)
 (function () {
-  var embeds = document.querySelectorAll('.form-embed[data-form-src]');
-  if (!embeds.length) return;
-  var load = function (el) {
-    if (el.dataset.loaded) return;
-    el.dataset.loaded = '1';
-    var iframe = document.createElement('iframe');
-    iframe.src = el.getAttribute('data-form-src');
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('title', 'Terminanfrage Hoffnungsohr');
-    iframe.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;border:0;';
-    el.appendChild(iframe);
-  };
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { load(e.target); io.unobserve(e.target); }
+  var forms = document.querySelectorAll('form.ho-form[data-endpoint]');
+  Array.prototype.forEach.call(forms, function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Honeypot: von Bots ausgefüllt -> still verwerfen
+      if (form._gotcha && form._gotcha.value) { return; }
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var status = form.querySelector('.ho-form-status');
+      var btn = form.querySelector('button[type=submit]');
+      var orig = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Wird gesendet …';
+      status.className = 'ho-form-status';
+      status.textContent = '';
+      fetch(form.getAttribute('data-endpoint'), {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new FormData(form)
+      }).then(function () {
+        form.reset();
+        status.className = 'ho-form-status is-ok';
+        status.textContent = 'Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns zeitnah bei Ihnen.';
+        btn.style.display = 'none';
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = orig;
+        status.className = 'ho-form-status is-err';
+        status.innerHTML = 'Leider ist etwas schiefgelaufen. Bitte rufen Sie uns direkt an: <a href="tel:+4915678669304">015678&nbsp;669304</a>.';
       });
-    }, { rootMargin: '300px 0px' });
-    embeds.forEach(function (el) { io.observe(el); });
-  } else {
-    embeds.forEach(load);
-  }
+    });
+  });
 })();

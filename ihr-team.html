@@ -151,30 +151,6 @@ Hauptstr. 251
   </div>
 </footer>
 
-<!-- Formbricks (deaktiviert bis ENV_ID gesetzt ist) -->
-<script>
-  window.formbricksConfig = {
-    // Tragen Sie hier Ihre Werte ein, um Formbricks zu aktivieren:
-    environmentId: "",          // z.B. "cl..." aus Formbricks Dashboard
-    apiHost: "https://app.formbricks.com"  // self-hosted: eigene URL
-  };
-  (function () {
-    if (!window.formbricksConfig.environmentId) return;
-    var s = document.createElement("script");
-    s.type = "module";
-    s.src = window.formbricksConfig.apiHost + "/js/formbricks.umd.cjs";
-    s.onload = function () {
-      if (window.formbricks) {
-        window.formbricks.init({
-          environmentId: window.formbricksConfig.environmentId,
-          apiHost: window.formbricksConfig.apiHost
-        });
-      }
-    };
-    document.head.appendChild(s);
-  })();
-</script>
-
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   document.querySelector('.nav-toggle')?.addEventListener('click', function(){ const o=document.body.classList.toggle('nav-open'); this.setAttribute('aria-expanded', o?'true':'false'); });
