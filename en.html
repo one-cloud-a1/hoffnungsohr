@@ -179,8 +179,64 @@ Hauptstr. 251
           <p class="hours-note">And by appointment</p>
         </div>
       </div>
-      <div style="text-align:center;margin-top:36px">
-        <a href="tel:+4915678669304" class="btn btn-primary btn-lg">📞 Call for an appointment</a>
+      <div style="max-width:560px;margin:44px auto 0">
+        <p class="team-eyebrow" style="color:var(--gold);text-align:center">Request an appointment</p>
+        <h3 style="text-align:center;margin:0 0 8px">Just leave your details</h3>
+        <p style="text-align:center;color:var(--steel);margin-bottom:28px">We'll get back to you shortly — no obligation, no pressure.</p>
+        <form class="ho-funnel" id="terminForm" data-endpoint="https://script.google.com/macros/s/AKfycbx64lWO6tSty-exQc0pwbpHUeRM1vw1JOXdy9d4expWkWomfN7EixlwAwFxCfI0iaiF/exec" novalidate>
+          <div class="funnel-progress" aria-hidden="true"><span class="funnel-progress-bar"></span></div>
+          <p class="funnel-count"></p>
+
+          <div class="funnel-step is-active" data-step>
+            <h3 class="funnel-q">What can we help you with?</h3>
+            <div class="funnel-options" data-autonext>
+              <label class="funnel-opt"><input type="radio" name="Anliegen" value="Free hearing test" required><span>Free hearing test</span></label>
+              <label class="funnel-opt"><input type="radio" name="Anliegen" value="Hearing aid advice"><span>Hearing aid advice</span></label>
+              <label class="funnel-opt"><input type="radio" name="Anliegen" value="Ear protection"><span>Ear protection</span></label>
+              <label class="funnel-opt"><input type="radio" name="Anliegen" value="In-ear monitoring"><span>In-ear monitoring</span></label>
+              <label class="funnel-opt"><input type="radio" name="Anliegen" value="Repair & service"><span>Repair &amp; service</span></label>
+              <label class="funnel-opt"><input type="radio" name="Anliegen" value="Something else"><span>Something else</span></label>
+            </div>
+          </div>
+
+          <div class="funnel-step" data-step>
+            <h3 class="funnel-q">What's your name?</h3>
+            <label class="ho-field"><span>Name <em>*</em></span><input type="text" name="Name" required autocomplete="name"></label>
+          </div>
+
+          <div class="funnel-step" data-step>
+            <h3 class="funnel-q">How can we reach you?</h3>
+            <label class="ho-field"><span>Phone <em>*</em></span><input type="tel" name="Telefon" required autocomplete="tel"></label>
+            <label class="ho-field"><span>Email <small>(optional)</small></span><input type="email" name="E-Mail" autocomplete="email"></label>
+          </div>
+
+          <div class="funnel-step" data-step>
+            <h3 class="funnel-q">Anything else you'd like to tell us?</h3>
+            <label class="ho-field"><span>Message <small>(optional)</small></span><textarea name="Nachricht" rows="4"></textarea></label>
+          </div>
+
+          <div class="funnel-step" data-step>
+            <h3 class="funnel-q">Almost done!</h3>
+            <p style="color:var(--steel);font-size:.95rem;margin:-4px 0 16px">We'll get back to you shortly — no obligation, no pressure.</p>
+            <label class="ho-consent"><input type="checkbox" name="consent" required> <span>I have read the <a href="datenschutz.html" target="_blank" rel="noopener">privacy policy</a> and agree to my data being processed to handle my enquiry. <em>*</em></span></label>
+          </div>
+
+          <input type="hidden" name="Sprache" value="English">
+          <input type="text" name="_gotcha" class="ho-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="funnel-nav">
+            <button type="button" class="btn btn-outline funnel-back" hidden>← Back</button>
+            <button type="button" class="btn btn-primary funnel-next">Next →</button>
+            <button type="submit" class="btn btn-primary funnel-submit" hidden>Send request</button>
+          </div>
+          <p class="ho-form-status" role="status" aria-live="polite"></p>
+
+          <div class="funnel-done" hidden>
+            <div class="funnel-done-icon" aria-hidden="true">✓</div>
+            <h3>Thank you!</h3>
+            <p>We've received your request and will get back to you shortly.</p>
+          </div>
+        </form>
       </div>
     </div>
   </section>

@@ -172,10 +172,13 @@
         form.querySelector('.funnel-nav').style.display = 'none';
         done.hidden = false;
       }).catch(function () {
+        var en = (document.documentElement.lang || '').slice(0, 2) === 'en';
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Terminanfrage senden';
+        submitBtn.textContent = en ? 'Send request' : 'Terminanfrage senden';
         status.className = 'ho-form-status is-err';
-        status.innerHTML = 'Leider ist etwas schiefgelaufen. Bitte rufen Sie uns direkt an: <a href="tel:+4915678669304">015678&nbsp;669304</a>.';
+        status.innerHTML = en
+          ? 'Something went wrong. Please call us directly: <a href="tel:+4915678669304">+49&nbsp;15678&nbsp;669304</a>.'
+          : 'Leider ist etwas schiefgelaufen. Bitte rufen Sie uns direkt an: <a href="tel:+4915678669304">015678&nbsp;669304</a>.';
       });
     });
 
