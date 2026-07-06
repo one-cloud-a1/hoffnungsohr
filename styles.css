@@ -661,6 +661,17 @@ button:focus-visible,a:focus-visible{
 .kasse-knapp{background:#003C96;color:#fff}
 .kasse-other{background:var(--bg-soft);color:var(--steel);border:1px solid var(--border)}
 .kassen-note{text-align:center;margin-top:14px;font-size:.78rem;color:var(--steel)}
+/* Herstellerunabhängig */
+.marken-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin:24px 0}
+.marke{padding:8px 18px;border-radius:6px;font-size:.9rem;font-weight:700;letter-spacing:-.01em;white-space:nowrap;background:var(--navy);color:#fff;transition:opacity .15s}
+.marke:hover{opacity:.88}
+.marke-alt{background:var(--bg-soft);color:var(--steel);border:1px solid var(--border)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.svc-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);border-top:3px solid var(--gold);padding:24px 22px}
+.svc-card .svc-icon{font-size:1.5rem;margin-bottom:8px}
+.svc-card h4{margin:0 0 6px}
+.svc-card p{margin:0;font-size:.92rem;color:var(--steel);line-height:1.6}
+@media(max-width:760px){.svc-grid{grid-template-columns:1fr}}
 
 /* Sticky Phone CTA ----------------------------------- */
 .sticky-phone{
