@@ -1,9 +1,28 @@
 {
-  "updated": null,
-  "place_id": "",
-  "name": "Hoffnungsohr",
-  "rating": null,
-  "total": 0,
-  "url": "https://maps.app.goo.gl/mbYMaicZrQAeHgmT6",
-  "reviews": []
+  "updated": "2026-07-13T12:56:47.095Z",
+  "place_id": "ChIJOyb0JpDZvkcRU6e2qATIyhE",
+  "name": "Hoffnungsohr Hörgeräte",
+  "rating": 5,
+  "total": 2,
+  "url": "https://maps.google.com/?cid=1282056966276294483",
+  "reviews": [
+    {
+      "author_name": "E R",
+      "author_url": "https://www.google.com/maps/contrib/106850981150239612957/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLt1CAdX4bHeFXCdqbn6oeK0JYRFdjaxZZFu4mH69GW0Zzeuw=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "text": "Herr Penzel hat wortwörtlich ein Ohr für das Problem! Konnte mir helfen. Immer wieder gerne",
+      "relative_time": "vor einer Woche",
+      "time": 1783251621
+    },
+    {
+      "author_name": "Lee JoKey",
+      "author_url": "https://www.google.com/maps/contrib/101633103864653596518/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXWCXJub_evqn5f0rkQ3rjzFBa85g_uU4OFGkt3BUreLNzmKDs=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "text": "Ich bin absolut begeistert! Herr Penzel hat sich viel Zeit genommen, alles verständlich erklärt und mich sehr kompetent beraten. Man merkt sofort, dass hier der Mensch im Mittelpunkt steht und nicht der Verkauf. Freundlich, ehrlich und professionell so wünscht man sich eine Beratung. Klare Empfehlung!",
+      "relative_time": "vor einer Woche",
+      "time": 1783250620
+    }
+  ]
 }
