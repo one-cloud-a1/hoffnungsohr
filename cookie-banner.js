@@ -1,5 +1,7 @@
 (function () {
   var STORAGE_KEY = 'hs_cookie_consent';
+  var GTM_ID = 'GTM-MTG98V2M';
+  var gtmLoaded = false;
 
   function getConsent() {
     try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
@@ -7,6 +9,22 @@
 
   function setConsent(value) {
     try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+  }
+
+  // Lädt den Google Tag Manager erst NACH ausdrücklicher Einwilligung (Opt-in).
+  function loadGTM() {
+    if (gtmLoaded || !GTM_ID) return;
+    gtmLoaded = true;
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', GTM_ID);
   }
 
   function removeBanner(banner) {
@@ -25,9 +43,11 @@
       '<div id="cookie-banner-inner">' +
         '<div id="cookie-banner-text">' +
           '<strong>Cookies & Datenschutz</strong>' +
-          '<p>Diese Website verwendet Cookies, um Ihnen die bestmögliche Nutzererfahrung zu bieten. ' +
-          'Notwendige Cookies sind immer aktiv. Optionale Cookies (z.&nbsp;B. Statistiken) setzen wir nur mit Ihrer Zustimmung. ' +
-          'Mehr erfahren Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>' +
+          '<p>Wir verwenden nur technisch notwendige Cookies. Zusätzlich möchten wir mit dem ' +
+          '<strong>Google Tag Manager</strong> statistische Reichweiten­messung (Google-Dienste) einsetzen – ' +
+          'dabei können Cookies gesetzt und Daten an Google übermittelt werden. Diese optionalen Dienste ' +
+          'laden wir erst mit Ihrer Einwilligung. Sie können Ihre Wahl jederzeit in der ' +
+          '<a href="datenschutz.html">Datenschutzerklärung</a> ändern.</p>' +
         '</div>' +
         '<div id="cookie-banner-actions">' +
           '<button id="cookie-accept" class="btn btn-primary">Alle akzeptieren</button>' +
@@ -71,6 +91,7 @@
 
     document.getElementById('cookie-accept').addEventListener('click', function () {
       setConsent('accepted');
+      loadGTM();
       removeBanner(banner);
     });
 
@@ -80,6 +101,12 @@
     });
   }
 
+  // Bereits erteilte Einwilligung: GTM sofort nachladen.
+  if (getConsent() === 'accepted') {
+    loadGTM();
+  }
+
+  // Noch keine Entscheidung getroffen: Banner anzeigen.
   if (!getConsent()) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', createBanner);
@@ -87,4 +114,11 @@
       createBanner();
     }
   }
+
+  // Widerruf / erneute Auswahl: setzt die Einwilligung zurück und zeigt das Banner wieder an.
+  // In der Datenschutzerklärung verlinkt, damit der Widerruf so einfach ist wie die Einwilligung.
+  window.hsResetCookieConsent = function () {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    location.reload();
+  };
 })();
