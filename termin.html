@@ -14,7 +14,7 @@
 <style>
   :root{
     --navy:#0F1F2E; --steel:#5A6470; --gold:#C4A46A; --gold-dark:#B08D56;
-    --bg-soft:#F6F5F1; --border:#E3DFD7; --call:#157347; --call-dark:#125E3A;
+    --bg-soft:#F6F5F1; --border:#E3DFD7; --muted:#5A6470;
     --radius:12px;
   }
   *{box-sizing:border-box}
@@ -48,7 +48,7 @@
     color:#fff;
     /* Hintergrundbild wie die Hauptseite (Johannes Penzel). Für Kampagnen-Sujets ggf. hier austauschen.
        Verlauf wie auf der Startseite: oben heller, unten dunkler – Text bleibt lesbar. */
-    background:linear-gradient(180deg,rgba(15,31,46,.60) 0%,rgba(15,31,46,.70) 45%,rgba(15,31,46,.88) 100%), url('images/hero-portrait.jpg') center/cover no-repeat, var(--navy);
+    background:linear-gradient(180deg,rgba(15,31,46,.60) 0%,rgba(15,31,46,.70) 45%,rgba(15,31,46,.88) 100%), url('images/hero-portrait.jpg') center 22%/cover no-repeat, var(--navy);
   }
   .hero-inner{ padding:2.4rem 0 2.8rem; }
   .badge{
@@ -163,6 +163,61 @@
     .sticky-call{ display:flex; }
     .foot{ padding-bottom:6.5rem; }
   }
+
+  /* ===== Übernommene Website-Blöcke (Komponenten-CSS) ===== */
+  .container{ max-width:1080px; margin:0 auto; padding:0 20px; }
+  .ms-sec{ padding:56px 0; }
+  .ms-sec.soft{ background:var(--bg-soft); }
+  .ms-sec h2{ font-size:clamp(1.6rem,3vw,2.4rem); line-height:1.2; color:var(--navy); margin:0 0 .4em; text-align:center; }
+  .ms-sec h3,.ms-sec h4{ color:var(--navy); }
+  .ms-sec > .container > p{ color:var(--navy); font-size:1.08rem; }
+  .section-title{ text-align:center; margin-bottom:44px; }
+  .section-title h2{ margin-bottom:.3em; }
+  .section-title p{ color:var(--muted); max-width:640px; margin:0 auto; font-size:1.08rem; }
+  .team-eyebrow{ font-size:.75rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-dark); font-weight:700; margin:0 0 18px; }
+
+  .marken-grid{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; margin:24px 0; }
+  .marke{ padding:8px 18px; border-radius:6px; font-size:.95rem; font-weight:700; white-space:nowrap; background:var(--navy); color:#fff; }
+  .marke-alt{ background:var(--bg-soft); color:var(--steel); border:1px solid var(--border); }
+  .svc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px; text-align:left; }
+  .svc-card{ background:#fff; border:1.5px solid var(--border); border-radius:var(--radius); border-top:3px solid var(--gold); padding:24px 22px; }
+  .svc-card .svc-icon{ font-size:1.7rem; margin-bottom:8px; }
+  .svc-card h4{ margin:0 0 6px; font-size:1.2rem; }
+  .svc-card p{ margin:0; font-size:1rem; color:var(--steel); line-height:1.6; }
+  @media(max-width:760px){ .svc-grid{ grid-template-columns:1fr; } }
+
+  .steps-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .step-card{ background:#fff; border:1.5px solid var(--border); border-radius:var(--radius); padding:28px 22px 24px; text-align:center; }
+  .step-num{ width:56px; height:56px; border-radius:50%; background:var(--navy); color:var(--gold); font-size:1.2rem; font-weight:800; display:inline-flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+  .step-card h3{ font-size:1.2rem; margin:0 0 .45em; }
+  .step-card p{ font-size:1rem; color:var(--muted); line-height:1.65; margin:0; }
+  .step-badge{ display:inline-block; margin-top:12px; padding:4px 12px; border-radius:999px; background:rgba(196,164,106,.15); color:var(--gold-dark); font-size:.88rem; font-weight:700; }
+  @media(max-width:700px){ .steps-grid{ grid-template-columns:1fr; gap:14px; } }
+
+  .diff-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; text-align:left; }
+  .diff-card{ background:#fff; border:1.5px solid var(--border); border-radius:var(--radius); padding:22px 20px; display:flex; gap:14px; align-items:flex-start; }
+  .diff-icon{ flex-shrink:0; width:46px; height:46px; border-radius:8px; background:var(--navy); color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:1.35rem; }
+  .diff-body h3{ font-size:1.1rem; font-weight:700; margin:0 0 .25em; }
+  .diff-body p{ font-size:1rem; color:var(--muted); margin:0; line-height:1.6; }
+  @media(max-width:680px){ .diff-grid{ grid-template-columns:1fr; } }
+
+  .section-features{ padding:56px 0; background:var(--bg-soft); }
+  .section-features .container.features{ max-width:640px; display:flex; flex-direction:column; align-items:center; gap:22px; }
+  .section-features .container+.container{ margin-top:36px; }
+  .feature-list{ display:grid; gap:12px; width:100%; margin:0; padding:0; list-style:none; }
+  .feature-list li{ padding-left:36px; position:relative; font-size:1.15rem; color:var(--navy); line-height:1.5; }
+  .feature-list li::before{ content:""; position:absolute; left:0; top:.05em; width:24px; height:24px; border-radius:50%; background:var(--gold) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F1F2E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") no-repeat center/13px; }
+  .features-cta{ align-self:center; }
+
+  .kassen-section{ padding:48px 0; background:#fff; }
+  .kassen-label{ text-align:center; font-size:.78rem; text-transform:uppercase; letter-spacing:.14em; color:var(--steel); font-weight:700; margin-bottom:22px; }
+  .kassen-grid{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; }
+  .kasse{ padding:8px 16px; border-radius:5px; font-size:.92rem; font-weight:700; white-space:nowrap; color:#fff; }
+  .kasse-tk{ background:#005EA8; } .kasse-aok{ background:#009B3A; } .kasse-barmer{ background:#7B1A2A; }
+  .kasse-dak{ background:#003F7F; } .kasse-kkh{ background:#00857C; } .kasse-hkk{ background:#D61518; }
+  .kasse-bkk{ background:#C00010; } .kasse-ikk{ background:#C0006A; } .kasse-knapp{ background:#003C96; }
+  .kasse-other{ background:var(--bg-soft); color:var(--steel); border:1px solid var(--border); }
+  .kassen-note{ text-align:center; margin-top:14px; font-size:.88rem; color:var(--steel); }
 </style>
 </head>
 <body>
@@ -253,6 +308,105 @@
     <div class="trust-item"><div class="ic" aria-hidden="true">🎓</div><div class="t">Meisterbetrieb</div><div class="d">Für Hörakustik in Rösrath</div></div>
     <div class="trust-item"><div class="ic" aria-hidden="true">🅿️</div><div class="t">Kostenlose Parkplätze</div><div class="d">Direkt am Haus in Rösrath</div></div>
     <div class="trust-item"><div class="ic" aria-hidden="true">♿</div><div class="t">Barrierefrei</div><div class="d">Extra breite Türen</div></div>
+  </div>
+</section>
+
+<!-- ===== Übernommene Blöcke von der Hauptseite ===== -->
+<section class="ms-sec">
+  <div class="container" style="max-width:900px;text-align:center">
+    <p class="team-eyebrow">Herstellerunabhängig</p>
+    <h2>Alle führenden Marken — Wartung auch für woanders gekaufte Geräte</h2>
+    <div class="marken-grid">
+      <span class="marke">Phonak</span>
+      <span class="marke">Signia</span>
+      <span class="marke">Oticon</span>
+      <span class="marke">Widex</span>
+      <span class="marke">Starkey</span>
+      <span class="marke">GN ReSound</span>
+      <span class="marke">Bernafon</span>
+      <span class="marke">Unitron</span>
+      <span class="marke marke-alt">+ alle weiteren</span>
+    </div>
+    <p style="max-width:760px;margin:0 auto">Wir sind <strong>herstellerunabhängig</strong> und beraten Sie zu Hörgeräten aller führenden Marken — ganz ohne Konzern-Hausmarke. Und das Beste: <strong>Unabhängig davon, wo Sie Ihr Hörgerät gekauft haben, warten und reparieren wir es.</strong> Auch wenn Ihr Phonak, Signia oder Oticon von einem anderen Akustiker oder online stammt, sind Sie bei uns in Rösrath herzlich willkommen.</p>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-icon">🔧</div><h4>Reparatur &amp; Wartung</h4><p>Reinigung, Funktionskontrolle und Reparatur für Geräte aller Hersteller — auch für Fremdgeräte, die Sie nicht bei uns gekauft haben.</p></div>
+      <div class="svc-card"><div class="svc-icon">🔋</div><h4>Batterien &amp; Zubehör</h4><p>Hörgerätebatterien, Filter, Schirmchen, Trockenkapseln und Pflegemittel — passend für alle gängigen Marken, direkt vor Ort.</p></div>
+      <div class="svc-card"><div class="svc-icon">🎚️</div><h4>Feinanpassung</h4><p>Sitzt Ihr Gerät nicht optimal oder klingt es nicht rund? Wir justieren nach — mit der Hoffnungsohr-Target-Methode, auch bei bestehenden Hörgeräten.</p></div>
+    </div>
+    <div style="margin-top:28px"><a href="#form" class="btn btn-gold">Jetzt Termin vereinbaren</a></div>
+  </div>
+</section>
+
+<section class="ms-sec soft">
+  <div class="container">
+    <div class="section-title">
+      <h2>In 3 Schritten zu Ihrem Hörgerät</h2>
+      <p>Einfach. Persönlich. Ohne Risiko. — Und das schon ab Ihrem ersten Besuch.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">01</div><h3>Kostenloser Hörtest</h3><p>Ein professioneller Hörtest beim Hoffnungsohr zeigt in 15 Minuten, wie gut Sie hören — kostenlos, ohne HNO-Rezept und ohne Voranmeldung nötig.</p><span class="step-badge">Kostenlos &amp; unverbindlich</span></div>
+      <div class="step-card"><div class="step-num">02</div><h3>Persönliche Beratung</h3><p>Johannes Penzel bespricht mit Ihnen Ihren Alltag, Ihre Hörsituationen und Wünsche. Wir zeigen Ihnen passende Hörsysteme — von Nulltarif bis High-End.</p><span class="step-badge">Inhabergeführt &amp; individuell</span></div>
+      <div class="step-card"><div class="step-num">03</div><h3>21 Tage Probetragen</h3><p>Tragen Sie Ihr Hörgerät 21 Tage lang in Ihrem echten Alltag. Mit unserer Hörerfolgsgarantie: Wenn Sie nicht überzeugt sind, geben Sie es zurück — kein Risiko.</p><span class="step-badge">Garantierter Hörerfolg</span></div>
+    </div>
+    <div style="text-align:center;margin-top:36px"><a href="#form" class="btn btn-gold">Jetzt Probetragen vereinbaren</a></div>
+  </div>
+</section>
+
+<section class="ms-sec soft">
+  <div class="container">
+    <div class="section-title">
+      <h2>Warum Hoffnungsohr — und nicht die Kette?</h2>
+      <p>Was uns von Filialisten unterscheidet: Persönlichkeit, Methode und echter Einsatz für Ihren Hörerfolg.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card"><div class="diff-icon">👤</div><div class="diff-body"><h3>Inhabergeführt — Johannes Penzel persönlich</h3><p>Johannes Penzel kennt Sie, Ihre Hörgeschichte und Ihren Alltag — von der ersten Beratung bis zur langfristigen Nachsorge.</p></div></div>
+      <div class="diff-card"><div class="diff-icon">🎯</div><div class="diff-body"><h3>Hoffnungsohr-Target — unsere Anpassungsmethode</h3><p>Kein Kettenstandard. Unsere einzigartige Anpassungsmethode kalibriert Ihr Hörgerät exakt auf Ihre persönliche Hörumgebung — für ein natürlicheres Hörerlebnis von Anfang an.</p></div></div>
+      <div class="diff-card"><div class="diff-icon">🚫</div><div class="diff-body"><h3>Kein Konzern. Kein Verkaufsdruck.</h3><p>Wir haben keine Umsatzziele eines Konzerns im Rücken. Wir empfehlen Ihnen das Hörgerät, das wirklich zu Ihnen passt — auch wenn das das günstigere Modell ist.</p></div></div>
+      <div class="diff-card"><div class="diff-icon">📍</div><div class="diff-body"><h3>Rösrath — 20 Minuten von Köln</h3><p>Kurze Wege statt langer Anfahrt: Hoffnungsthal liegt direkt an der Kölner Stadtgrenze. Persönliche Beratung und Nachsorge ohne großen Aufwand.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-features">
+  <div class="container features">
+    <ul class="feature-list">
+      <li>Hörgeräte bereits ab 0&nbsp;€* möglich</li>
+      <li>Online-Anpassung &amp; Hausbesuche</li>
+      <li>Von Nulltarif bis High-End Hörsysteme</li>
+      <li>Hörerfolg mit der Hoffnungsohr-Target Anpassung</li>
+      <li>Beste Sprachverständlichkeit — auch in Gruppen</li>
+      <li>21 Tage Hörerfolgsgarantie</li>
+    </ul>
+    <a href="#form" class="btn btn-gold features-cta">Jetzt Probetragen vereinbaren</a>
+  </div>
+  <div class="container features">
+    <ul class="feature-list">
+      <li>0&nbsp;% Finanzierung</li>
+      <li>Nur neueste Modelle führender Hersteller</li>
+      <li>Kostenloser Hörtest &amp; Alltagsanalyse</li>
+      <li>Partner aller Krankenkassen &amp; privaten Versicherungen</li>
+      <li>Hausbesuche für eingeschränkte Mobilität</li>
+    </ul>
+    <a href="tel:+4922057380767" class="btn btn-outline features-cta"><span aria-hidden="true">📞</span> Direkt anrufen</a>
+  </div>
+</section>
+
+<section class="kassen-section">
+  <div class="container">
+    <p class="kassen-label">Partner aller gesetzlichen Krankenkassen — Ihre Kasse zahlt mit</p>
+    <div class="kassen-grid">
+      <span class="kasse kasse-tk">TK</span>
+      <span class="kasse kasse-aok">AOK</span>
+      <span class="kasse kasse-barmer">Barmer</span>
+      <span class="kasse kasse-dak">DAK-Gesundheit</span>
+      <span class="kasse kasse-kkh">KKH</span>
+      <span class="kasse kasse-hkk">hkk</span>
+      <span class="kasse kasse-bkk">BKK</span>
+      <span class="kasse kasse-ikk">IKK</span>
+      <span class="kasse kasse-knapp">Knappschaft</span>
+      <span class="kasse kasse-other">+ alle weiteren Kassen</span>
+    </div>
+    <p class="kassen-note">Wir rechnen direkt mit Ihrer gesetzlichen Krankenkasse ab — Sie kümmern sich um nichts.</p>
   </div>
 </section>
 
