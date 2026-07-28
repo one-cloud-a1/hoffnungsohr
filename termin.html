@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kostenloser Hörtest in Rösrath – Termin sichern | Hoffnungsohr</title>
+<meta name="description" content="Kostenloser Hörtest beim Hörakustik-Meisterbetrieb in Rösrath. Aktion: Code HOFFOHR10. Termin anfragen oder direkt anrufen – ohne Kaufzwang, ohne Zeitdruck.">
+<!-- Ads-Landingpage: soll NICHT organisch ranken (kein Duplicate Content zur Hauptseite) -->
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta name="theme-color" content="#0F1F2E">
+<style>
+  :root{
+    --navy:#0F1F2E; --steel:#5A6470; --gold:#C4A46A; --gold-dark:#B08D56;
+    --bg-soft:#F6F5F1; --border:#E3DFD7; --call:#157347; --call-dark:#125E3A;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--navy); background:#fff; font-size:19px; line-height:1.6;
+  }
+  a{color:inherit}
+  img{max-width:100%;height:auto;display:block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---- Promo-Bar ---- */
+  .promo-bar{
+    background:var(--gold); color:var(--navy); text-align:center;
+    font-weight:700; font-size:1.02rem; padding:.6rem 1rem; letter-spacing:.01em;
+  }
+  .promo-bar strong{ background:var(--navy); color:#fff; padding:.12em .5em; border-radius:6px; margin:0 .15em; white-space:nowrap; }
+
+  /* ---- Header (minimal, kein Menü) ---- */
+  .top{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.8rem 0; }
+  .top img{ height:52px; width:auto; }
+  .top-call{
+    display:inline-flex; align-items:center; gap:.5rem; font-weight:800; text-decoration:none;
+    color:var(--navy); font-size:1.12rem; white-space:nowrap;
+  }
+  .top-call .ph{ font-size:1.3rem; }
+
+  /* ---- Hero ---- */
+  .hero{
+    color:#fff;
+    /* Kampagnen-Sujet: Bild je Anzeigengruppe hier austauschen (Anti-Aging / Longevity / Fit bleiben / Gemeinschaft).
+       Das dunkle Overlay hält den Text immer gut lesbar – unabhängig vom Bild. */
+    background:linear-gradient(rgba(15,31,46,.86),rgba(15,31,46,.90)), url('images/foto-1.jpg') center/cover no-repeat, var(--navy);
+  }
+  .hero-inner{ padding:2.4rem 0 2.8rem; }
+  .badge{
+    display:inline-block; background:var(--gold); color:var(--navy); font-weight:800;
+    padding:.5rem .9rem; border-radius:999px; font-size:1rem; margin-bottom:1.1rem;
+  }
+  .hero h1{ font-size:2.35rem; line-height:1.15; margin:0 0 .7rem; letter-spacing:-.01em; }
+  .hero .sub{ font-size:1.22rem; margin:0 0 1.4rem; color:#EAF0F5; max-width:34ch; }
+  .hero .sub strong{ color:#fff; }
+
+  .cta-row{ display:flex; flex-wrap:wrap; gap:.9rem; margin:0 0 1.4rem; }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+    min-height:60px; padding:.9rem 1.6rem; border-radius:var(--radius);
+    font-size:1.18rem; font-weight:800; text-decoration:none; cursor:pointer;
+    border:2px solid transparent; text-align:center; line-height:1.2;
+  }
+  .btn-call{ background:var(--call); color:#fff; }
+  .btn-call:hover{ background:var(--call-dark); }
+  .btn-form{ background:var(--gold); color:var(--navy); }
+  .btn-form:hover{ background:var(--gold-dark); }
+  .btn-block{ width:100%; }
+
+  .hero-usp{ list-style:none; margin:0; padding:0; display:grid; gap:.5rem; }
+  .hero-usp li{ display:flex; align-items:flex-start; gap:.55rem; font-size:1.05rem; color:#EAF0F5; }
+  .hero-usp .ck{ color:var(--gold); font-weight:900; flex:0 0 auto; }
+
+  /* ---- Formular ---- */
+  .form-sec{ background:var(--bg-soft); padding:2.4rem 0 3rem; }
+  .form-card{
+    background:#fff; border:1px solid var(--border); border-radius:16px;
+    box-shadow:0 12px 40px rgba(15,31,46,.10); max-width:620px; margin:0 auto; padding:1.8rem 1.6rem 2rem;
+  }
+  .form-card h2{ font-size:1.7rem; margin:0 0 .35rem; }
+  .form-lead{ margin:0 0 1.4rem; color:var(--steel); font-size:1.08rem; }
+  .form-lead strong{ color:var(--navy); }
+
+  .field{ margin-bottom:1.15rem; }
+  .field > .lbl{ display:block; font-weight:700; margin-bottom:.45rem; font-size:1.05rem; }
+  .field input[type=text], .field input[type=tel]{
+    width:100%; min-height:56px; padding:.7rem .9rem; font-size:1.12rem;
+    border:2px solid var(--border); border-radius:10px; color:var(--navy); background:#fff;
+  }
+  .field input:focus{ outline:none; border-color:var(--gold-dark); box-shadow:0 0 0 3px rgba(196,164,106,.25); }
+
+  .opts{ display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
+  .opt{ position:relative; }
+  .opt input{ position:absolute; opacity:0; width:100%; height:100%; margin:0; cursor:pointer; }
+  .opt span{
+    display:flex; align-items:center; min-height:56px; padding:.6rem .8rem; font-size:1.05rem; font-weight:600;
+    border:2px solid var(--border); border-radius:10px; background:#fff;
+  }
+  .opt input:checked + span{ border-color:var(--navy); background:#0F1F2E; color:#fff; }
+  .opt input:focus-visible + span{ box-shadow:0 0 0 3px rgba(196,164,106,.35); }
+
+  .consent{ display:flex; align-items:flex-start; gap:.65rem; font-size:.98rem; color:var(--steel); line-height:1.45; }
+  .consent input{ width:26px; height:26px; margin:.1rem 0 0; flex:0 0 auto; }
+  .consent a{ color:var(--navy); font-weight:700; }
+
+  .submit{
+    width:100%; min-height:62px; margin-top:.4rem; border:none; border-radius:12px;
+    background:var(--navy); color:#fff; font-size:1.22rem; font-weight:800; cursor:pointer;
+  }
+  .submit:hover{ background:#183042; }
+  .submit:disabled{ opacity:.7; cursor:default; }
+
+  .or{ text-align:center; color:var(--steel); font-weight:700; margin:1.1rem 0; }
+  .form-status{ margin-top:.9rem; font-size:1rem; }
+  .form-status.is-err{ color:#B00020; font-weight:600; }
+  .hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+
+  .done{ text-align:center; padding:1rem .5rem; }
+  .done .big{ font-size:1.5rem; font-weight:800; margin:.3rem 0 .6rem; }
+  .done p{ color:var(--steel); margin:0 auto; max-width:38ch; }
+
+  /* ---- Trust-Bar ---- */
+  .trust{ padding:2rem 0; }
+  .trust-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; text-align:center; }
+  .trust-item .ic{ font-size:1.9rem; line-height:1; }
+  .trust-item .t{ font-weight:800; margin:.4rem 0 .15rem; font-size:1.05rem; }
+  .trust-item .d{ color:var(--steel); font-size:.95rem; }
+
+  /* ---- Footer (nur Pflicht-Links) ---- */
+  .foot{ background:var(--navy); color:#C7D0D8; padding:2rem 0 6.5rem; font-size:1rem; }
+  .foot a{ color:#fff; }
+  .foot .row{ display:flex; flex-wrap:wrap; gap:1.4rem 2.4rem; justify-content:space-between; }
+  .foot h4{ color:#fff; margin:0 0 .4rem; font-size:1.05rem; }
+  .foot .legal{ margin-top:1.4rem; padding-top:1.2rem; border-top:1px solid rgba(255,255,255,.15); display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; }
+  .foot .legal nav a{ margin-left:1.2rem; text-decoration:underline; }
+
+  /* ---- Sticky Call (Mobile) ---- */
+  .sticky-call{
+    position:fixed; left:0; right:0; bottom:0; z-index:1000; display:none;
+    align-items:center; justify-content:center; gap:.6rem;
+    background:var(--call); color:#fff; text-decoration:none; font-weight:800; font-size:1.2rem;
+    padding:1rem; box-shadow:0 -4px 20px rgba(0,0,0,.2);
+  }
+
+  @media (max-width:860px){
+    .trust-grid{ grid-template-columns:1fr 1fr; gap:1.4rem 1rem; }
+  }
+  @media (max-width:640px){
+    body{ font-size:18px; }
+    .hero h1{ font-size:1.95rem; }
+    .hero .sub{ font-size:1.12rem; }
+    .cta-row .btn{ width:100%; }
+    .opts{ grid-template-columns:1fr; }
+    .top-call span.num{ display:none; }   /* auf Mobile Icon reicht, Sticky-Call übernimmt */
+    .sticky-call{ display:flex; }
+    .foot{ padding-bottom:6.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Promo-Bar: konsistent mit der Google-Anzeige -->
+<div class="promo-bar">Aktion: Jetzt Code <strong>HOFFOHR10</strong> sichern – kostenloser Hörtest</div>
+
+<header class="wrap top">
+  <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Hoffnungsohr – Hörakustik-Meisterbetrieb in Rösrath" width="156" height="52"></picture>
+  <a class="top-call" href="tel:+4922057380767"><span class="ph" aria-hidden="true">📞</span><span class="num">02205&nbsp;7380767</span></a>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="badge">🎁 Aktionscode HOFFOHR10</span>
+    <h1>Kostenloser Hörtest in Rösrath – schnell &amp; unkompliziert</h1>
+    <p class="sub">Hörgeräte <strong>ab 0&nbsp;€</strong>, 21&nbsp;Tage Hörerfolgsgarantie, persönliche Beratung vom Meisterbetrieb. <strong>Ohne Kaufzwang, ohne Zeitdruck.</strong></p>
+    <div class="cta-row">
+      <a class="btn btn-call" href="tel:+4922057380767"><span aria-hidden="true">📞</span> Jetzt anrufen</a>
+      <a class="btn btn-form" href="#form">Termin anfragen</a>
+    </div>
+    <ul class="hero-usp">
+      <li><span class="ck" aria-hidden="true">✓</span> Termin in wenigen Tagen – auch kurzfristig</li>
+      <li><span class="ck" aria-hidden="true">✓</span> Partner aller gesetzlichen Krankenkassen</li>
+    </ul>
+  </div>
+</section>
+
+<section class="form-sec" id="form">
+  <div class="wrap">
+    <div class="form-card">
+      <h2>Kostenlosen Termin anfragen</h2>
+      <p class="form-lead">Sie geben nur Name &amp; Telefon an – wir rufen Sie zurück. Aktionscode <strong>HOFFOHR10</strong> ist bereits hinterlegt.</p>
+
+      <form id="lpForm" novalidate
+            data-endpoint="https://script.google.com/macros/s/AKfycbx64lWO6tSty-exQc0pwbpHUeRM1vw1JOXdy9d4expWkWomfN7EixlwAwFxCfI0iaiF/exec">
+
+        <div class="field">
+          <span class="lbl">Worum geht es?</span>
+          <div class="opts" role="radiogroup" aria-label="Anliegen">
+            <label class="opt"><input type="radio" name="Anliegen" value="Kostenloser Hörtest" checked><span>Kostenloser Hörtest</span></label>
+            <label class="opt"><input type="radio" name="Anliegen" value="Beratung zu Hörgeräten"><span>Beratung Hörgeräte</span></label>
+            <label class="opt"><input type="radio" name="Anliegen" value="Gehörschutz"><span>Gehörschutz</span></label>
+            <label class="opt"><input type="radio" name="Anliegen" value="Sonstiges"><span>Etwas anderes</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="lbl" for="f-name">Ihr Name <span aria-hidden="true">*</span></label>
+          <input id="f-name" type="text" name="Name" required autocomplete="name" autocapitalize="words">
+        </div>
+
+        <div class="field">
+          <label class="lbl" for="f-tel">Telefonnummer <span aria-hidden="true">*</span></label>
+          <input id="f-tel" type="tel" name="Telefon" required autocomplete="tel" inputmode="tel" placeholder="z. B. 0176 1234567">
+        </div>
+
+        <div class="field">
+          <label class="consent"><input type="checkbox" name="consent" required> <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden. <span aria-hidden="true">*</span></span></label>
+        </div>
+
+        <!-- versteckte Felder -->
+        <input type="hidden" name="Sprache" value="Deutsch">
+        <input type="hidden" name="Aktionscode" value="HOFFOHR10">
+        <input type="hidden" name="Quelle" value="Google Ads Landingpage (/termin)">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button type="submit" class="submit">Kostenlosen Termin anfragen</button>
+        <div class="form-status" role="alert"></div>
+      </form>
+
+      <div class="or">— oder —</div>
+      <a class="btn btn-call btn-block" href="tel:+4922057380767"><span aria-hidden="true">📞</span> Direkt anrufen: 02205&nbsp;7380767</a>
+
+      <div class="done" id="formDone" hidden>
+        <div style="font-size:2.4rem" aria-hidden="true">✅</div>
+        <div class="big">Vielen Dank – wir melden uns!</div>
+        <p>Ihre Anfrage ist bei uns eingegangen. Wir rufen Sie zeitnah zurück. Möchten Sie sofort sprechen? <a href="tel:+4922057380767" style="color:var(--navy);font-weight:800">02205&nbsp;7380767</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap trust">
+  <div class="trust-grid">
+    <div class="trust-item"><div class="ic" aria-hidden="true">🕊️</div><div class="t">Kein Kaufzwang</div><div class="d">Kein Zeitdruck, ehrliche Beratung</div></div>
+    <div class="trust-item"><div class="ic" aria-hidden="true">🎓</div><div class="t">Meisterbetrieb</div><div class="d">Hörakustik-Handwerk aus einer Hand</div></div>
+    <div class="trust-item"><div class="ic" aria-hidden="true">♿</div><div class="t">Barrierefrei</div><div class="d">Ebenerdiger, bequemer Zugang</div></div>
+    <div class="trust-item"><div class="ic" aria-hidden="true">🅿️</div><div class="t">Kostenlose Parkplätze</div><div class="d">Direkt am Haus in Rösrath</div></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <h4>Hoffnungsohr</h4>
+        Hauptstr. 251<br>51503 Rösrath<br>
+        <a href="tel:+4922057380767">02205&nbsp;7380767</a> · <a href="mailto:hi@hoffnungsohr.de">hi@hoffnungsohr.de</a>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        Mo – Mi: 09:00 – 13:00 &amp; 14:00 – 18:00 Uhr<br>
+        Do – Fr: 09:00 – 13:00 Uhr<br>
+        Sowie nach Vereinbarung
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Hoffnungsohr</span>
+      <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+    </div>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:+4922057380767"><span aria-hidden="true">📞</span> Jetzt anrufen: 02205&nbsp;7380767</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function(){
+    var form = document.getElementById('lpForm');
+    var status = form.querySelector('.form-status');
+    var done = document.getElementById('formDone');
+    var submitBtn = form.querySelector('.submit');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (form._gotcha && form._gotcha.value) { return; }          // Honeypot
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      submitBtn.disabled = true; submitBtn.textContent = 'Wird gesendet …';
+      status.className = 'form-status'; status.textContent = '';
+
+      fetch(form.getAttribute('data-endpoint'), {
+        method: 'POST', mode: 'no-cors', body: new FormData(form)
+      }).then(function(){
+        form.style.display = 'none';
+        done.hidden = false;
+        try { window.dataLayer = window.dataLayer || []; dataLayer.push({ event:'generate_lead', method:'form' }); } catch(e){}
+        done.scrollIntoView({ behavior:'smooth', block:'center' });
+      }).catch(function(){
+        submitBtn.disabled = false; submitBtn.textContent = 'Kostenlosen Termin anfragen';
+        status.className = 'form-status is-err';
+        status.innerHTML = 'Leider ist etwas schiefgelaufen. Bitte rufen Sie uns direkt an: <a href="tel:+4922057380767">02205&nbsp;7380767</a>.';
+      });
+    });
+
+    // Telefon-Klicks als Event (für Google-Ads-/GTM-Conversion nutzbar)
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="tel:"]'), function(a){
+      a.addEventListener('click', function(){
+        try { window.dataLayer = window.dataLayer || []; dataLayer.push({ event:'phone_click' }); } catch(e){}
+      });
+    });
+  })();
+</script>
+<!-- Consent-Banner: lädt GTM erst nach Einwilligung (identisch zur Hauptseite) -->
+<script src="cookie-banner.js" defer></script>
+</body>
+</html>
