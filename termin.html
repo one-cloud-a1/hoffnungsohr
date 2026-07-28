@@ -46,17 +46,18 @@
   /* ---- Hero ---- */
   .hero{
     color:#fff;
-    /* Kampagnen-Sujet: Bild je Anzeigengruppe hier austauschen (Anti-Aging / Longevity / Fit bleiben / Gemeinschaft).
-       Das dunkle Overlay hält den Text immer gut lesbar – unabhängig vom Bild. */
-    background:linear-gradient(rgba(15,31,46,.86),rgba(15,31,46,.90)), url('images/foto-1.jpg') center/cover no-repeat, var(--navy);
+    /* Hintergrundbild wie die Hauptseite (Johannes Penzel). Für Kampagnen-Sujets ggf. hier austauschen.
+       Verlauf wie auf der Startseite: oben heller, unten dunkler – Text bleibt lesbar. */
+    background:linear-gradient(180deg,rgba(15,31,46,.60) 0%,rgba(15,31,46,.70) 45%,rgba(15,31,46,.88) 100%), url('images/hero-portrait.jpg') center/cover no-repeat, var(--navy);
   }
   .hero-inner{ padding:2.4rem 0 2.8rem; }
   .badge{
     display:inline-block; background:var(--gold); color:var(--navy); font-weight:800;
     padding:.5rem .9rem; border-radius:999px; font-size:1rem; margin-bottom:1.1rem;
   }
-  .hero h1{ font-size:2.35rem; line-height:1.15; margin:0 0 .7rem; letter-spacing:-.01em; }
-  .hero .sub{ font-size:1.22rem; margin:0 0 1.4rem; color:#EAF0F5; max-width:34ch; }
+  .hero h1{ font-size:2.5rem; line-height:1.12; margin:0 0 .35rem; letter-spacing:-.01em; }
+  .hero .guarantee{ font-size:1.75rem; font-weight:800; color:var(--gold); line-height:1.2; margin:0 0 1rem; }
+  .hero .sub{ font-size:1.18rem; margin:0 0 1.4rem; color:#EAF0F5; max-width:40ch; }
   .hero .sub strong{ color:#fff; }
 
   .cta-row{ display:flex; flex-wrap:wrap; gap:.9rem; margin:0 0 1.4rem; }
@@ -66,10 +67,12 @@
     font-size:1.18rem; font-weight:800; text-decoration:none; cursor:pointer;
     border:2px solid transparent; text-align:center; line-height:1.2;
   }
-  .btn-call{ background:var(--call); color:#fff; }
-  .btn-call:hover{ background:var(--call-dark); }
-  .btn-form{ background:var(--gold); color:var(--navy); }
-  .btn-form:hover{ background:var(--gold-dark); }
+  .btn-gold{ background:var(--gold); color:var(--navy); }
+  .btn-gold:hover{ background:var(--gold-dark); }
+  .btn-ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,.7); }
+  .btn-ghost:hover{ background:rgba(255,255,255,.14); }
+  .btn-outline{ background:transparent; color:var(--navy); border-color:var(--navy); }
+  .btn-outline:hover{ background:var(--navy); color:#fff; }
   .btn-block{ width:100%; }
 
   .hero-usp{ list-style:none; margin:0; padding:0; display:grid; gap:.5rem; }
@@ -110,9 +113,9 @@
 
   .submit{
     width:100%; min-height:62px; margin-top:.4rem; border:none; border-radius:12px;
-    background:var(--navy); color:#fff; font-size:1.22rem; font-weight:800; cursor:pointer;
+    background:var(--gold); color:var(--navy); font-size:1.22rem; font-weight:800; cursor:pointer;
   }
-  .submit:hover{ background:#183042; }
+  .submit:hover{ background:var(--gold-dark); }
   .submit:disabled{ opacity:.7; cursor:default; }
 
   .or{ text-align:center; color:var(--steel); font-weight:700; margin:1.1rem 0; }
@@ -143,7 +146,7 @@
   .sticky-call{
     position:fixed; left:0; right:0; bottom:0; z-index:1000; display:none;
     align-items:center; justify-content:center; gap:.6rem;
-    background:var(--call); color:#fff; text-decoration:none; font-weight:800; font-size:1.2rem;
+    background:var(--gold); color:var(--navy); text-decoration:none; font-weight:800; font-size:1.2rem;
     padding:1rem; box-shadow:0 -4px 20px rgba(0,0,0,.2);
   }
 
@@ -174,12 +177,13 @@
 
 <section class="hero">
   <div class="wrap hero-inner">
-    <span class="badge">🎁 Aktionscode HOFFOHR10</span>
-    <h1>Kostenloser Hörtest in Rösrath – schnell &amp; unkompliziert</h1>
-    <p class="sub">Hörgeräte <strong>ab 0&nbsp;€</strong>, 21&nbsp;Tage Hörerfolgsgarantie, persönliche Beratung vom Meisterbetrieb. <strong>Ohne Kaufzwang, ohne Zeitdruck.</strong></p>
+    <span class="badge">🎁 Aktionscode HOFFOHR10 sichern</span>
+    <h1>Kostenloser Hörtest in Rösrath</h1>
+    <p class="guarantee">mit 21 Tagen Hörerfolgsgarantie</p>
+    <p class="sub">Hörgeräte <strong>ab 0&nbsp;€</strong> · individuelle Anpassung · persönliche Betreuung – <strong>markenunabhängig &amp; inhabergeführt</strong>.</p>
     <div class="cta-row">
-      <a class="btn btn-call" href="tel:+4922057380767"><span aria-hidden="true">📞</span> Jetzt anrufen</a>
-      <a class="btn btn-form" href="#form">Termin anfragen</a>
+      <a class="btn btn-gold" href="#form">Kostenlosen Hörtest vereinbaren</a>
+      <a class="btn btn-ghost" href="tel:+4922057380767"><span aria-hidden="true">📞</span> 02205&nbsp;7380767</a>
     </div>
     <ul class="hero-usp">
       <li><span class="ck" aria-hidden="true">✓</span> Termin in wenigen Tagen – auch kurzfristig</li>
@@ -232,7 +236,7 @@
       </form>
 
       <div class="or">— oder —</div>
-      <a class="btn btn-call btn-block" href="tel:+4922057380767"><span aria-hidden="true">📞</span> Direkt anrufen: 02205&nbsp;7380767</a>
+      <a class="btn btn-outline btn-block" href="tel:+4922057380767"><span aria-hidden="true">📞</span> Direkt anrufen: 02205&nbsp;7380767</a>
 
       <div class="done" id="formDone" hidden>
         <div style="font-size:2.4rem" aria-hidden="true">✅</div>
@@ -245,7 +249,7 @@
 
 <section class="wrap trust">
   <div class="trust-grid">
-    <div class="trust-item"><div class="ic" aria-hidden="true">🤝</div><div class="t">Markenunabhängig &amp; familiengeführt</div><div class="d">Ehrliche Beratung ohne Konzernvorgaben</div></div>
+    <div class="trust-item"><div class="ic" aria-hidden="true">🤝</div><div class="t">Markenunabhängig &amp; inhabergeführt</div><div class="d">Ehrliche Beratung ohne Konzernvorgaben</div></div>
     <div class="trust-item"><div class="ic" aria-hidden="true">🎓</div><div class="t">Meisterbetrieb</div><div class="d">Für Hörakustik in Rösrath</div></div>
     <div class="trust-item"><div class="ic" aria-hidden="true">🅿️</div><div class="t">Kostenlose Parkplätze</div><div class="d">Direkt am Haus in Rösrath</div></div>
     <div class="trust-item"><div class="ic" aria-hidden="true">♿</div><div class="t">Barrierefrei</div><div class="d">Extra breite Türen</div></div>
