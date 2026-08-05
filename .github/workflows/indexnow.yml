@@ -1,0 +1,78 @@
+name: IndexNow ping
+
+# Meldet bei jedem Push die geänderten HTML-Seiten an IndexNow (Bing, Yandex u. a.),
+# damit sie schneller neu indexiert werden. Der Key ist öffentlich (liegt als
+# <key>.txt im Site-Root) — es wird kein Secret benötigt.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+  workflow_dispatch:   # manuell auslösbar → meldet dann ALLE HTML-Seiten
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    env:
+      HOST: www.hoffnungsohr.de
+      KEY: 32dbe5950f9b6f2139115fda7745f094
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Geänderte HTML-URLs an IndexNow melden
+        run: |
+          set -euo pipefail
+          BEFORE='${{ github.event.before }}'
+          AFTER='${{ github.sha }}'
+
+          # Erstlauf / unbekannter Vorgänger-Commit → alle HTML-Dateien melden,
+          # sonst nur die in diesem Push hinzugefügten/geänderten (keine Löschungen).
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            mapfile -t FILES < <(git ls-files '*.html')
+          else
+            mapfile -t FILES < <(git diff --name-only --diff-filter=ACMR "$BEFORE" "$AFTER" -- '*.html')
+          fi
+
+          if [ "${#FILES[@]}" -eq 0 ]; then
+            echo "Keine geänderten HTML-Dateien – nichts zu melden."
+            exit 0
+          fi
+
+          # Datei-Pfade → absolute URLs (index.html wird zur Startseite /)
+          URLS=()
+          for f in "${FILES[@]}"; do
+            case "$f" in
+              index.html)        URLS+=("https://$HOST/") ;;
+              */index.html)      URLS+=("https://$HOST/${f%index.html}") ;;
+              *)                 URLS+=("https://$HOST/$f") ;;
+            esac
+          done
+
+          # JSON-Body bauen
+          LIST=$(printf '"%s",' "${URLS[@]}")
+          LIST="[${LIST%,}]"
+          BODY="{\"host\":\"$HOST\",\"key\":\"$KEY\",\"keyLocation\":\"https://$HOST/$KEY.txt\",\"urlList\":$LIST}"
+
+          echo "Melde ${#URLS[@]} URL(s) an IndexNow:"
+          printf '  %s\n' "${URLS[@]}"
+
+          CODE=$(curl -sS -o /dev/null -w '%{http_code}' -X POST 'https://api.indexnow.org/indexnow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data "$BODY")
+          echo "IndexNow-Antwort: HTTP $CODE"
+
+          # 200 (OK) und 202 (Accepted) gelten als Erfolg
+          if [ "$CODE" != "200" ] && [ "$CODE" != "202" ]; then
+            echo "::warning::IndexNow antwortete mit HTTP $CODE"
+          fi
