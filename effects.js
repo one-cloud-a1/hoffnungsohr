@@ -68,10 +68,11 @@
     });
   });
 
-  // Auto-mark current page link
-  var page = location.pathname.split('/').pop() || 'index.html';
+  // Auto-mark current page link (funktioniert mit Clean URLs /seite und mit .html)
+  var page = location.pathname.replace(/\/$/, '').split('/').pop().replace(/\.html$/, '');
   document.querySelectorAll('.nav > a, .nav-group-menu a').forEach(function(a){
-    if(a.getAttribute('href') === page){
+    var href = (a.getAttribute('href') || '').replace(/[#?].*$/, '').replace(/^\//, '').replace(/\.html$/, '');
+    if(href && href === page){
       a.setAttribute('aria-current','page');
       var grp = a.closest('.nav-group');
       if(grp) grp.querySelector('.nav-group-btn').classList.add('active');

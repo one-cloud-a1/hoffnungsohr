@@ -47,7 +47,7 @@
           '<strong>Google Tag Manager</strong> statistische Reichweiten­messung (Google-Dienste) einsetzen – ' +
           'dabei können Cookies gesetzt und Daten an Google übermittelt werden. Diese optionalen Dienste ' +
           'laden wir erst mit Ihrer Einwilligung. Sie können Ihre Wahl jederzeit in der ' +
-          '<a href="/datenschutz.html">Datenschutzerklärung</a> ändern.</p>' +
+          '<a href="/datenschutz">Datenschutzerklärung</a> ändern.</p>' +
         '</div>' +
         '<div id="cookie-banner-actions">' +
           '<button id="cookie-accept" class="btn btn-primary">Alle akzeptieren</button>' +
