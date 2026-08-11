@@ -1,18 +1,27 @@
 {
-  "updated": "2026-08-04T06:43:21.169Z",
+  "updated": "2026-08-11T05:30:13.371Z",
   "place_id": "ChIJOyb0JpDZvkcRU6e2qATIyhE",
   "name": "Hoffnungsohr Hörgeräte",
   "rating": 5,
-  "total": 4,
+  "total": 5,
   "url": "https://maps.google.com/?cid=1282056966276294483",
   "reviews": [
+    {
+      "author_name": "Diana Traut",
+      "author_url": "https://www.google.com/maps/contrib/111232074811883139404/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKg8Ec32EDb1dwfk8sfC0twffHZmzB1eqgJ1ps_K5KUi539bA=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "text": "Super! Wirklich hilfreich und freundliche Beratung!",
+      "relative_time": "in der letzten Woche",
+      "time": 1786302909
+    },
     {
       "author_name": "Julia Strauß",
       "author_url": "https://www.google.com/maps/contrib/101371938274566038535/reviews",
       "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIz8t7XHfXLp1kUPv-FhxMN266yyBZq54UtJvAFHrz5srnabA=s128-c0x00000000-cc-rp-mo-ba4",
       "rating": 5,
       "text": "Alles toppi. Unkompliziert und persönlich beraten.",
-      "relative_time": "in der letzten Woche",
+      "relative_time": "vor einer Woche",
       "time": 1785404959
     },
     {
@@ -21,7 +30,7 @@
       "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocI0XcoHqnN94anfhCfP3D-xCi51GRRhQ7SppOkGzrrsCizUbA=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
       "text": "Ich wurde sehr freundlich und kompetent beraten. Man nimmt sich Zeit, geht auf alle Fragen ein und fühlt sich von Anfang an gut aufgehoben. Absolut empfehlenswert!",
-      "relative_time": "in der letzten Woche",
+      "relative_time": "vor einer Woche",
       "time": 1785329141
     },
     {
@@ -30,7 +39,7 @@
       "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLt1CAdX4bHeFXCdqbn6oeK0JYRFdjaxZZFu4mH69GW0Zzeuw=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
       "text": "Herr Penzel hat wortwörtlich ein Ohr für das Problem! Konnte mir helfen. Immer wieder gerne",
-      "relative_time": "vor 4 Wochen",
+      "relative_time": "vor einem Monat",
       "time": 1783251621
     },
     {
@@ -39,7 +48,7 @@
       "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXWCXJub_evqn5f0rkQ3rjzFBa85g_uU4OFGkt3BUreLNzmKDs=s128-c0x00000000-cc-rp-mo",
       "rating": 5,
       "text": "Ich bin absolut begeistert! Herr Penzel hat sich viel Zeit genommen, alles verständlich erklärt und mich sehr kompetent beraten. Man merkt sofort, dass hier der Mensch im Mittelpunkt steht und nicht der Verkauf. Freundlich, ehrlich und professionell so wünscht man sich eine Beratung. Klare Empfehlung!",
-      "relative_time": "vor 4 Wochen",
+      "relative_time": "vor einem Monat",
       "time": 1783250620
     }
   ]
