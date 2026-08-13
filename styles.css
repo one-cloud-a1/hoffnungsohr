@@ -178,6 +178,7 @@ button:focus-visible,a:focus-visible{
     opacity:1;min-width:0;max-height:0;overflow:hidden;
     transition:max-height .28s ease;
   }
+  .nav-group.is-open .nav-group-menu,.nav-group:hover .nav-group-menu{transform:none}
   .nav-group.is-open .nav-group-menu{max-height:500px;pointer-events:auto}
   .nav-group-menu a{padding:13px 40px;border-radius:0;border-bottom:1px solid var(--border);font-size:15px}
 }

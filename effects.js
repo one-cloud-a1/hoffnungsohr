@@ -11,7 +11,7 @@
           io.unobserve(e.target);
         }
       });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
     targets.forEach(function (t) { io.observe(t); });
   }
 
