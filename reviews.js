@@ -25,7 +25,7 @@
         var text = (v.text || '').trim();
         if (text.length > 320) text = text.slice(0, 300).replace(/\s+\S*$/, '') + ' …';
         var avatar = v.profile_photo_url
-          ? '<img class="testi-avatar" src="' + esc(v.profile_photo_url) + '" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer">'
+          ? '<img class="testi-avatar" src="' + esc(v.profile_photo_url) + '" alt="Profilbild von ' + esc(v.author_name) + '" width="40" height="40" loading="lazy" referrerpolicy="no-referrer">'
           : '';
         var when = v.relative_time ? ' · ' + esc(v.relative_time) : '';
         return '<div class="testi-card">' +
