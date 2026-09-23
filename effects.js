@@ -178,11 +178,86 @@
         submitBtn.textContent = en ? 'Send request' : 'Terminanfrage senden';
         status.className = 'ho-form-status is-err';
         status.innerHTML = en
-          ? 'Something went wrong. Please call us directly: <a href="tel:+492257380767">+49&nbsp;2257&nbsp;380767</a>.'
-          : 'Leider ist etwas schiefgelaufen. Bitte rufen Sie uns direkt an: <a href="tel:+492257380767">02257&nbsp;380767</a>.';
+          ? 'Something went wrong. Please call us directly: <a href="tel:+4922057380767">+49&nbsp;2205&nbsp;7380767</a>.'
+          : 'Leider ist etwas schiefgelaufen. Bitte rufen Sie uns direkt an: <a href="tel:+4922057380767">02205&nbsp;7380767</a>.';
       });
     });
 
     show(0);
+  }
+})();
+
+// Temporärer Öffnungszeiten-Hinweis (läuft nach NOTICE_DATE automatisch aus — dann einfach diesen Block löschen oder Datum anpassen)
+(function () {
+  var NOTICE_DATE = '2026-09-23';
+  var STORAGE_KEY = 'ho_notice_' + NOTICE_DATE;
+  var DELAY_MS = 3500;
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function todayStr() {
+    var d = new Date();
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  }
+
+  if (todayStr() !== NOTICE_DATE) return;
+
+  try {
+    if (sessionStorage.getItem(STORAGE_KEY)) return;
+  } catch (e) {}
+
+  function show() {
+    var el = document.createElement('div');
+    el.id = 'day-notice';
+    el.setAttribute('role', 'status');
+    el.innerHTML =
+      '<div id="day-notice-card">' +
+        '<button id="day-notice-close" aria-label="Hinweis schließen">&times;</button>' +
+        '<span id="day-notice-icon" aria-hidden="true">🕒</span>' +
+        '<strong>Heute etwas später für Sie da</strong>' +
+        '<p>Wir öffnen heute erst um <strong>14:00&nbsp;Uhr</strong>. Gerne können Sie uns in der Zwischenzeit eine E-Mail schreiben: <a href="mailto:hi@hoffnungsohr.de">hi@hoffnungsohr.de</a></p>' +
+      '</div>';
+
+    var style = document.createElement('style');
+    style.textContent =
+      '#day-notice{position:fixed;top:88px;right:20px;z-index:500;max-width:360px;' +
+        'opacity:0;transform:translateY(-10px) scale(.98);pointer-events:none;' +
+        'transition:opacity .4s cubic-bezier(.22,.61,.36,1),transform .4s cubic-bezier(.22,.61,.36,1);}' +
+      '#day-notice.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}' +
+      '#day-notice-card{position:relative;background:linear-gradient(160deg,#16293C,#0F1F2E);' +
+        'border:1px solid rgba(196,164,106,.4);border-radius:14px;' +
+        'padding:1.3rem 1.5rem 1.15rem;box-shadow:0 18px 44px rgba(15,31,46,.32);color:#fff;}' +
+      '#day-notice-icon{display:block;font-size:1.3rem;margin-bottom:.5rem}' +
+      '#day-notice-card>strong{display:block;font-size:1rem;letter-spacing:.01em;' +
+        'color:#DCC08E;margin-bottom:.45rem}' +
+      '#day-notice-card p{margin:0;font-size:.875rem;line-height:1.55;color:rgba(255,255,255,.85)}' +
+      '#day-notice-card p strong{display:inline;color:#fff;font-size:inherit}' +
+      '#day-notice-card a{color:#DCC08E;font-weight:600;text-decoration:underline}' +
+      '#day-notice-close{position:absolute;top:4px;right:4px;width:42px;height:42px;' +
+        'border:none;background:transparent;color:rgba(255,255,255,.55);font-size:1.5rem;' +
+        'line-height:1;cursor:pointer;border-radius:50%;display:flex;align-items:center;' +
+        'justify-content:center;transition:background .15s,color .15s}' +
+      '#day-notice-close:hover{background:rgba(255,255,255,.14);color:#fff}' +
+      '@media(max-width:600px){#day-notice{top:80px;left:12px;right:12px;max-width:none}}';
+
+    document.head.appendChild(style);
+    document.body.appendChild(el);
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { el.classList.add('visible'); });
+    });
+
+    function dismiss() {
+      el.classList.remove('visible');
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+      setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 400);
+    }
+
+    document.getElementById('day-notice-close').addEventListener('click', dismiss);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(show, DELAY_MS); });
+  } else {
+    setTimeout(show, DELAY_MS);
   }
 })();
