@@ -1,11 +1,29 @@
 {
-  "updated": "2026-09-29T10:44:03.160Z",
+  "updated": "2026-10-06T11:19:38.019Z",
   "place_id": "ChIJOyb0JpDZvkcRU6e2qATIyhE",
   "name": "Hoffnungsohr Hörgeräte",
   "rating": 5,
-  "total": 5,
+  "total": 7,
   "url": "https://maps.google.com/?cid=1282056966276294483",
   "reviews": [
+    {
+      "author_name": "Sarah R",
+      "author_url": "https://www.google.com/maps/contrib/100213626599943972003/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVdB-w1MOQAPfSRuqxpfaR5lgv9LnUGM3_M1e8u2ENHS7RUMoV4=s128-c0x00000000-cc-rp-mo-ba2",
+      "rating": 5,
+      "text": "Wir waren mit der Beratung bei Hoffnungsohr rundum zufrieden. Die Beratung war sehr ausführlich und verständlich. Besonders schön fand ich, dass mein Kind sich von Anfang an wohlgefühlt hat und sehr freundlich und geduldig behandelt wurde.\n\nHerr Penzel war ausgesprochen nett, hilfsbereit und kompetent und hat sich viel Zeit für unsere Fragen genommen. Man fühlt sich hier wirklich gut aufgehoben und ernst genommen.\n\nWir würden Hoffnungsohr jederzeit weiterempfehlen und kommen bei Bedarf sehr gerne wieder! 😊",
+      "relative_time": "in der letzten Woche",
+      "time": 1790956690
+    },
+    {
+      "author_name": "Irina Weinen",
+      "author_url": "https://www.google.com/maps/contrib/108165912746023457723/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLn0T_Z1KgiXmoGlZ9384CD6-QsFsAeJX5CfYT9sweHRW7exg=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "text": "Wir waren hier, um für unseren Sohn einen Wasserschutz (nach Paukenröhrchen OP) anfertigen zu lassen. Herr Penzel war sehr freundlich, hat sich ganz viel Zeit für uns genommen und alles sehr kindgerecht erklärt. Wir kommen sicher wieder, vielen Dank!",
+      "relative_time": "in der letzten Woche",
+      "time": 1790946473
+    },
     {
       "author_name": "Diana Traut",
       "author_url": "https://www.google.com/maps/contrib/111232074811883139404/reviews",
@@ -32,24 +50,6 @@
       "text": "Ich wurde sehr freundlich und kompetent beraten. Man nimmt sich Zeit, geht auf alle Fragen ein und fühlt sich von Anfang an gut aufgehoben. Absolut empfehlenswert!",
       "relative_time": "vor 2 Monaten",
       "time": 1785329141
-    },
-    {
-      "author_name": "E R",
-      "author_url": "https://www.google.com/maps/contrib/106850981150239612957/reviews",
-      "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLt1CAdX4bHeFXCdqbn6oeK0JYRFdjaxZZFu4mH69GW0Zzeuw=s128-c0x00000000-cc-rp-mo",
-      "rating": 5,
-      "text": "Herr Penzel hat wortwörtlich ein Ohr für das Problem! Konnte mir helfen. Immer wieder gerne",
-      "relative_time": "vor 2 Monaten",
-      "time": 1783251621
-    },
-    {
-      "author_name": "Lee JoKey",
-      "author_url": "https://www.google.com/maps/contrib/101633103864653596518/reviews",
-      "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXWCXJub_evqn5f0rkQ3rjzFBa85g_uU4OFGkt3BUreLNzmKDs=s128-c0x00000000-cc-rp-mo",
-      "rating": 5,
-      "text": "Ich bin absolut begeistert! Herr Penzel hat sich viel Zeit genommen, alles verständlich erklärt und mich sehr kompetent beraten. Man merkt sofort, dass hier der Mensch im Mittelpunkt steht und nicht der Verkauf. Freundlich, ehrlich und professionell so wünscht man sich eine Beratung. Klare Empfehlung!",
-      "relative_time": "vor 2 Monaten",
-      "time": 1783250620
     }
   ]
 }
